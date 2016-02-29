@@ -2,12 +2,12 @@
 Plasma5 applet that displays a panel with a set of system actions
 
 ## Supported actions:
-- Monitor standby (turn off monitor to save energy)
+- Standby (turn off monitor to save energy)
 - Lock screen
-- Leave (Log out, restart or shut down the computer)
-- Switch user
-- Sleep (Suspend to RAM)
-- Hibernate (Suspend to disk)
+- Leave (log out, restart or shut down the computer)
+- Switch user (switch user o create new session)
+- Sleep (suspend to RAM)
+- Hibernate (suspend to disk)
 
 ## Other features
 - Supports different layouts

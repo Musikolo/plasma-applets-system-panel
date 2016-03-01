@@ -1,0 +1,20 @@
+# (0) Minimum Requirements (tested, but might be lower)
+- Qt               >= 5.4.0 
+- KDE Workspace    >= 5.4.0
+- Plasma Framework >= 5.19
+
+# (1) Standard way: having root permission
+cd /path/to/system_panel/
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` -DCMAKE_BUILD_TYPE=Release -DLIB_INSTALL_DIR=lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON ../src/
+make
+make install
+
+# (2) Alternative way: have non-root permission
+cd /path/to/system_panel/
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=`kde4-config --localprefix` --prefix` -DCMAKE_BUILD_TYPE=Release -DLIB_INSTALL_DIR=lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON ../src/
+make
+make install

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+
+  <group name="General">
+    <entry name="show_turnOffScreen" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="show_requestShutDown" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="show_lockScreen" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="show_switchUser" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="show_suspendToDisk" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="show_suspendToRam" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="inlineBestFit" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="rows" type="Int">
+      <default>2</default>
+    </entry>
+    <entry name="columns" type="Int">
+      <default>3</default>
+    </entry>
+  </group>
+
+</kcfg>
+

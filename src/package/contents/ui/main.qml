@@ -190,25 +190,25 @@ Item {
     }
     
     function clickHandler(what, button) {
-        if (what == "suspendToDisk") {
+        if (what == "suspendToDisk" && plasmoid.configuration.hibernateConfirmation) {
             if (!hibernateDialog) {
                 hibernateDialog = hibernateDialogComponent.createObject(itemGrid);
             }
             hibernateDialog.visualParent = button
-            hibernateDialog.open();
+            hibernateDialog.open()
 
-        } else if (what == "suspendToRam") {
+        } else if (what == "suspendToRam" && plasmoid.configuration.sleepConfirmation){
             if (!sleepDialog) {
                 sleepDialog = sleepDialogComponent.createObject(itemGrid);
             }
             sleepDialog.visualParent = button
-            sleepDialog.open();
+            sleepDialog.open()
 
         } else if (what == "turnOffScreen") {
             systemPanel.turnOffScreen();
             
         } else {
-            performOperation(what);
+            performOperation(what)
         }
     }
     
@@ -221,6 +221,11 @@ Item {
     }
 
     function result(job) {
-        console.log("ServiceJob result=",  job.result, "op=", job.operationName);
+
+        console.log("ServiceJob result=",  job.result, "operationName=", job.operationName);
+
+        if(job.operationName == "lockScreen" && plasmoid.configuration.lockTurnOffScreen){
+            systemPanel.turnOffScreen()
+        }
     }
 }

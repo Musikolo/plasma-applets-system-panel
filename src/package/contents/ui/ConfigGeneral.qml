@@ -33,10 +33,13 @@ Item {
 
     property alias cfg_show_turnOffScreen: turnOffScreen.checked
     property alias cfg_show_requestShutDown: leave.checked
+    property alias cfg_lockTurnOffScreen: lockTurnOffScreen.checked
     property alias cfg_show_lockScreen: lock.checked
     property alias cfg_show_switchUser: switchUser.checked
     property alias cfg_show_suspendToDisk: hibernate.checked
+    property alias cfg_hibernateConfirmation: hibernateConfirmation.checked
     property alias cfg_show_suspendToRam: sleep.checked
+    property alias cfg_sleepConfirmation: sleepConfirmation.checked
     
     property alias cfg_inlineBestFit: inlineBestFit.checked
     property alias cfg_rows: rows.value
@@ -45,6 +48,8 @@ Item {
     readonly property bool lockScreenEnabled: dataEngine.data["Sleep States"].LockScreen
     readonly property bool suspendEnabled: dataEngine.data["Sleep States"].Suspend
     readonly property bool hibernateEnabled: dataEngine.data["Sleep States"].Hibernate
+
+    readonly property int defaultLeftMargin: 10
 
     SystemPalette {
         id: sypal
@@ -65,37 +70,105 @@ Item {
             level: 2
         }
 
-        QtControls.CheckBox {
-            id: turnOffScreen
-            text: i18n("Turn Off Screen")
-            enabled: (numVisibleButtons > 1 || !checked)
-        }        
-        QtControls.CheckBox {
-            id: leave
-            text: i18n("Leave")
-            enabled: iconsPage.lockScreenEnabled && (numVisibleButtons > 1 || !checked)
+        Column {
+            spacing: 5
+
+            Column {
+                QtControls.Label {
+                    id: turnOffLabel
+                    text: i18n("Turn Off Screen")
+                }
+                QtControls.CheckBox {
+                    id: turnOffScreen
+                    anchors.left: parent.left
+                    anchors.leftMargin: defaultLeftMargin
+                    text: i18n("Enabled")
+                    enabled: (numVisibleButtons > 1 || !checked)
+                }
+            }
+            Column {
+                QtControls.Label {
+                    text: i18n("Leave")
+                }
+                QtControls.CheckBox {
+                    id: leave
+                    anchors.left: parent.left
+                    anchors.leftMargin: defaultLeftMargin
+                    text: i18n("Enabled")
+                    enabled: iconsPage.lockScreenEnabled && (numVisibleButtons > 1 || !checked)
+                }
+            }
+            Column {
+                QtControls.Label {
+                    text: i18n("Lock")
+                }
+                QtControls.CheckBox {
+                    id: lock
+                    anchors.left: parent.left
+                    anchors.leftMargin: defaultLeftMargin
+                    text: i18n("Enabled")
+                    enabled: numVisibleButtons > 1 || !checked
+                }
+                QtControls.CheckBox {
+                    id: lockTurnOffScreen
+                    anchors.left: parent.left
+                    anchors.leftMargin: defaultLeftMargin
+                    text: i18n("Turn off screen when locking")
+                    enabled: lock.checked
+                }
+            }
+            Column {
+                QtControls.Label {
+                    text: i18n("Switch User")
+                }
+                QtControls.CheckBox {
+                    id: switchUser
+                    anchors.left: parent.left
+                    anchors.leftMargin: defaultLeftMargin
+                    text: i18n("Enabled")
+                    enabled: numVisibleButtons > 1 || !checked
+                }
+            }
+            Column {
+                QtControls.Label {
+                    text: i18n("Hibernate")
+                }
+                QtControls.CheckBox {
+                    id: hibernate
+                    anchors.left: parent.left
+                    anchors.leftMargin: defaultLeftMargin
+                    text: i18n("Enabled")
+                    enabled: iconsPage.hibernateEnabled && (numVisibleButtons > 1 || !checked)
+                }
+                QtControls.CheckBox {
+                    id: hibernateConfirmation
+                    anchors.left: parent.left
+                    anchors.leftMargin: defaultLeftMargin
+                    text: i18n("Ask for confirmation")
+                    enabled: hibernate.checked
+                }
+            }
+            Column {
+                QtControls.Label {
+                    text: i18n("Suspend")
+                }
+                QtControls.CheckBox {
+                    id: sleep
+                    anchors.left: parent.left
+                    anchors.leftMargin: defaultLeftMargin
+                    text: i18n("Enabled")
+                    enabled: iconsPage.suspendEnabled && (numVisibleButtons > 1 || !checked)
+                }
+                QtControls.CheckBox {
+                    id: sleepConfirmation
+                    anchors.left: parent.left
+                    anchors.leftMargin: defaultLeftMargin
+                    text: i18n("Ask for confirmation")
+                    enabled: sleep.checked
+                }
+            }
         }
-        QtControls.CheckBox {
-            id: lock
-            text: i18n("Lock")
-            enabled: numVisibleButtons > 1 || !checked
-        }
-        QtControls.CheckBox {
-            id: switchUser
-            text: i18n("Switch User")
-            enabled: numVisibleButtons > 1 || !checked
-        }
-        QtControls.CheckBox {
-            id: hibernate
-            text: i18n("Hibernate")
-            enabled: iconsPage.hibernateEnabled && (numVisibleButtons > 1 || !checked)
-        }
-        QtControls.CheckBox {
-            id: sleep
-            text: i18n("Suspend")
-            enabled: iconsPage.suspendEnabled && (numVisibleButtons > 1 || !checked)
-        }
-        
+
         PlasmaExtras.Heading {
             text: i18nc("Number of rows, columns...","Layout")
             color: syspal.text

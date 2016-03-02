@@ -30,7 +30,7 @@ public:
     ~SystemPanel();
 
 public Q_SLOTS:
-    void turnOffScreen();
+    int turnOffScreen();
 };
 
 #endif

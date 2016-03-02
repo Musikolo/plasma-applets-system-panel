@@ -15,10 +15,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// #include <KDebug>
-// #include <KMessageBox>
 #include "systempanel.h"
-
 
 SystemPanel::SystemPanel(QObject *parent) : QObject(parent) {
 }
@@ -26,12 +23,9 @@ SystemPanel::SystemPanel(QObject *parent) : QObject(parent) {
 SystemPanel::~SystemPanel() {
 }
 
-void SystemPanel::turnOffScreen(){
+int SystemPanel::turnOffScreen(){
     
-    const int result = system("xset dpms force off");
-     if( result != 0 ) {
-//         KMessageBox::sorry( NULL,  i18n( "The operation has failed!" ) );
-//         kDebug() << "The operation has failed!";
-     }
+    const int result = system("/usr/bin/xset dpms force off");
+    
+    return result;
 }
-#include "systempanel.moc"

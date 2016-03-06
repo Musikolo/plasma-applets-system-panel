@@ -192,7 +192,7 @@ Item {
             }
             maximumValue: Math.ceil(numVisibleButtons / columns.value)
             value: cfg_rows
-            suffix: i18n(" rows")
+            suffix: " " + i18n("rows")
             enabled: !inlineBestFit.checked && numVisibleButtons > 1
         }
 
@@ -207,7 +207,7 @@ Item {
             }
             maximumValue: Math.ceil(numVisibleButtons / rows.value)
             value: cfg_columns
-            suffix: i18n(" columns")
+            suffix: " " + i18n("columns")
             enabled: !inlineBestFit.checked && numVisibleButtons > 1
         }
     }

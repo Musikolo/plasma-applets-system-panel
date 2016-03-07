@@ -11,7 +11,7 @@ cmake -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` -DCMAKE_BUILD_TYPE=Release -
 make
 make install
 
-# (2) Alternative way: have non-root permission
+# (2) Alternative way: having non-root permission
 cd /path/to/system_panel/
 mkdir build
 cd build

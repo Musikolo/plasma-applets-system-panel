@@ -1,4 +1,6 @@
-- Add option to Turn Off the monitor when Locking the screen
-- Add option to make optional ask for confirmation for some actions
 - Localization of the plasmoid
+- Rearrange icons position
+- Customize icons
 - Add contextual menu with unselected options
+- Select custom action
+- Add About tab in the Settings window

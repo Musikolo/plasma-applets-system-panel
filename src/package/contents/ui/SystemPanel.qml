@@ -47,7 +47,10 @@ Item {
         
         var plugin = getSystemPanelPlugin()
         if (plugin) {
-            plugin.turnOffScreen()
+            var result = plugin.turnOffScreen()
+            if(result !=0){
+                console.error("plugin.turnOffScreen() returned error code=", result)
+            }
             
         } else {
             console.exception('ERROR: Turning off screen - SystemPanel plugin not available')

@@ -15,14 +15,23 @@
     <entry name="show_lockScreen" type="Bool">
       <default>true</default>
     </entry>
+    <entry name="lockTurnOffScreen" type="Bool">
+      <default>false</default>
+    </entry>
     <entry name="show_switchUser" type="Bool">
       <default>false</default>
     </entry>
     <entry name="show_suspendToDisk" type="Bool">
       <default>false</default>
     </entry>
+    <entry name="hibernateConfirmation" type="Bool">
+      <default>true</default>
+    </entry>
     <entry name="show_suspendToRam" type="Bool">
       <default>false</default>
+    </entry>
+    <entry name="sleepConfirmation" type="Bool">
+      <default>true</default>
     </entry>
     <entry name="inlineBestFit" type="Bool">
       <default>true</default>

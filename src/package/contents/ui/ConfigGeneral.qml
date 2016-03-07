@@ -76,7 +76,7 @@ Item {
             Column {
                 QtControls.Label {
                     id: turnOffLabel
-                    text: i18n("Turn Off Screen")
+                    text: i18n("Turn off screen")
                 }
                 QtControls.CheckBox {
                     id: turnOffScreen
@@ -119,7 +119,7 @@ Item {
             }
             Column {
                 QtControls.Label {
-                    text: i18n("Switch User")
+                    text: i18n("Switch user")
                 }
                 QtControls.CheckBox {
                     id: switchUser

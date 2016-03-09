@@ -1,4 +1,11 @@
 ---------------------
+2016-03-XX - v.1.2.0
+---------------------
+- Added localization support
+- Added French translation (special thanks to Dominique Bribanick)
+- Added Spanish translation
+
+---------------------
 2016-03-07 - v.1.1.0
 ---------------------
 - Added option to Turn Off the monitor when Locking the screen

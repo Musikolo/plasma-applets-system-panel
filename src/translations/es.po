@@ -1,0 +1,155 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Carlos López Sánchez <musikolo@hotmail.com>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://kde-look.org/content/show.php/plasma5-applets-sys"
+"tem-panel?content=175309\n"
+"POT-Creation-Date: 2016-03-08 23:21-0600\n"
+"PO-Revision-Date: 2016-03-08 23:42-0600\n"
+"Last-Translator: Carlos López Sánchez <musikolo@hotmail.com>\n"
+"Language-Team: English <kde-i18n-doc@kde.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: package/contents/code/data.js:7
+msgid "Standby"
+msgstr "Reposo "
+
+#: package/contents/code/data.js:8
+msgid "Turn off the monitor to save energy"
+msgstr "Apagar el monitor para ahorrar energía"
+
+#: package/contents/code/data.js:12 package/contents/ui/ConfigGeneral.qml:103
+msgid "Lock"
+msgstr "Bloquear"
+
+#: package/contents/code/data.js:13
+msgid "Lock the screen"
+msgstr "Bloquear la pantalla"
+
+#: package/contents/code/data.js:18 package/contents/ui/ConfigGeneral.qml:122
+msgid "Switch user"
+msgstr "Cambiar de usuario"
+
+#: package/contents/code/data.js:19
+msgid "Start a parallel session as a different user"
+msgstr "Iniciar sesión en paralelo con un usuario diferente"
+
+#: package/contents/code/data.js:23
+msgid "Leave..."
+msgstr "Salir..."
+
+#: package/contents/code/data.js:24
+msgid "Log out, turn off or restart the computer"
+msgstr "Cerrar sesión, apagar o reiniciar el equipo"
+
+#: package/contents/code/data.js:28 package/contents/ui/ConfigGeneral.qml:153
+#: package/contents/ui/main.qml:156
+msgid "Suspend"
+msgstr "Suspender"
+
+#: package/contents/code/data.js:29
+msgid "Sleep (suspend to RAM)"
+msgstr "Suspender en memoria"
+
+#: package/contents/code/data.js:34 package/contents/ui/ConfigGeneral.qml:134
+#: package/contents/ui/main.qml:140
+msgid "Hibernate"
+msgstr "Hibernar"
+
+#: package/contents/code/data.js:35
+msgid "Hibernate (suspend to disk)"
+msgstr "Hibernar (suspender en disco)"
+
+#: package/contents/config/config.qml:24
+msgid "General"
+msgstr "General"
+
+#: package/contents/ui/ConfigGeneral.qml:68
+msgctxt "Heading for list of actions (leave, lock, shutdown, ...)"
+msgid "Actions"
+msgstr "Acciones"
+
+#: package/contents/ui/ConfigGeneral.qml:79
+msgid "Turn off screen"
+msgstr "Apagar la pantalla"
+
+#: package/contents/ui/ConfigGeneral.qml:85
+#: package/contents/ui/ConfigGeneral.qml:97
+#: package/contents/ui/ConfigGeneral.qml:109
+#: package/contents/ui/ConfigGeneral.qml:128
+#: package/contents/ui/ConfigGeneral.qml:140
+#: package/contents/ui/ConfigGeneral.qml:159
+msgid "Enabled"
+msgstr "Habilitar"
+
+#: package/contents/ui/ConfigGeneral.qml:91
+msgid "Leave"
+msgstr "Salir"
+
+#: package/contents/ui/ConfigGeneral.qml:116
+msgid "Turn off screen when locking"
+msgstr "Apagar la pantalla"
+
+#: package/contents/ui/ConfigGeneral.qml:147
+#: package/contents/ui/ConfigGeneral.qml:166
+msgid "Ask for confirmation"
+msgstr "Solicitar confirmación"
+
+#: package/contents/ui/ConfigGeneral.qml:173
+msgctxt "Number of rows, columns..."
+msgid "Layout"
+msgstr "Disposición"
+
+#: package/contents/ui/ConfigGeneral.qml:180
+msgid "Inline best fit"
+msgstr "Mejor ajuste en línea"
+
+#: package/contents/ui/ConfigGeneral.qml:195
+msgid "rows"
+msgstr "filas"
+
+#: package/contents/ui/ConfigGeneral.qml:210
+msgid "columns"
+msgstr "columnas"
+
+#: package/contents/ui/main.qml:141
+msgid "Do you want to suspend to disk (hibernate)?"
+msgstr "¿Quiere hibernar el equipo (suspender en disco)?"
+
+#: package/contents/ui/main.qml:144 package/contents/ui/main.qml:160
+msgid "Yes"
+msgstr "Sí"
+
+#: package/contents/ui/main.qml:145 package/contents/ui/main.qml:161
+msgid "No"
+msgstr "No"
+
+#: package/contents/ui/main.qml:157
+msgid "Do you want to suspend to RAM (sleep)?"
+msgstr "¿Quiere suspender el equipo en memoria?"
+
+#: translations/rc.cpp:1 rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Carlos López Sánchez"
+
+#: translations/rc.cpp:2 rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "musikolo[AT]hotmail{DOT}com"
+
+#: translations/rc.cpp:3 rc.cpp:3
+msgctxt "HOMEPAGE OF TRANSLATORS"
+msgid "Your homepages"
+msgstr "https://github.com/Musikolo"
+
+#~ msgid "Switch User"
+#~ msgstr "Cambiar usuario"

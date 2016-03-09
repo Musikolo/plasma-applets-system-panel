@@ -18,3 +18,8 @@ Plasma5 applet that displays a panel with a set of system actions
 
 ## Other features
 - Supports different layouts
+
+## Supported languages
+- English (default)
+- French
+- Spanish

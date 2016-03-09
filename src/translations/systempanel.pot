@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://kde-look.org/content/show.php/plasma5-applets-"
+"system-panel?content=175309\n"
+"POT-Creation-Date: 2016-03-08 23:21-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: package/contents/code/data.js:7
+msgid "Standby"
+msgstr ""
+
+#: package/contents/code/data.js:8
+msgid "Turn off the monitor to save energy"
+msgstr ""
+
+#: package/contents/code/data.js:12 package/contents/ui/ConfigGeneral.qml:103
+msgid "Lock"
+msgstr ""
+
+#: package/contents/code/data.js:13
+msgid "Lock the screen"
+msgstr ""
+
+#: package/contents/code/data.js:18 package/contents/ui/ConfigGeneral.qml:122
+msgid "Switch user"
+msgstr ""
+
+#: package/contents/code/data.js:19
+msgid "Start a parallel session as a different user"
+msgstr ""
+
+#: package/contents/code/data.js:23
+msgid "Leave..."
+msgstr ""
+
+#: package/contents/code/data.js:24
+msgid "Log out, turn off or restart the computer"
+msgstr ""
+
+#: package/contents/code/data.js:28 package/contents/ui/ConfigGeneral.qml:153
+#: package/contents/ui/main.qml:156
+msgid "Suspend"
+msgstr ""
+
+#: package/contents/code/data.js:29
+msgid "Sleep (suspend to RAM)"
+msgstr ""
+
+#: package/contents/code/data.js:34 package/contents/ui/ConfigGeneral.qml:134
+#: package/contents/ui/main.qml:140
+msgid "Hibernate"
+msgstr ""
+
+#: package/contents/code/data.js:35
+msgid "Hibernate (suspend to disk)"
+msgstr ""
+
+#: package/contents/config/config.qml:24
+msgid "General"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:68
+msgctxt "Heading for list of actions (leave, lock, shutdown, ...)"
+msgid "Actions"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:79
+msgid "Turn off screen"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:85
+#: package/contents/ui/ConfigGeneral.qml:97
+#: package/contents/ui/ConfigGeneral.qml:109
+#: package/contents/ui/ConfigGeneral.qml:128
+#: package/contents/ui/ConfigGeneral.qml:140
+#: package/contents/ui/ConfigGeneral.qml:159
+msgid "Enabled"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:91
+msgid "Leave"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:116
+msgid "Turn off screen when locking"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:147
+#: package/contents/ui/ConfigGeneral.qml:166
+msgid "Ask for confirmation"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:173
+msgctxt "Number of rows, columns..."
+msgid "Layout"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:180
+msgid "Inline best fit"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:195
+msgid "rows"
+msgstr ""
+
+#: package/contents/ui/ConfigGeneral.qml:210
+msgid "columns"
+msgstr ""
+
+#: package/contents/ui/main.qml:141
+msgid "Do you want to suspend to disk (hibernate)?"
+msgstr ""
+
+#: package/contents/ui/main.qml:144 package/contents/ui/main.qml:160
+msgid "Yes"
+msgstr ""
+
+#: package/contents/ui/main.qml:145 package/contents/ui/main.qml:161
+msgid "No"
+msgstr ""
+
+#: package/contents/ui/main.qml:157
+msgid "Do you want to suspend to RAM (sleep)?"
+msgstr ""
+
+#: translations/rc.cpp:1 rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: translations/rc.cpp:2 rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: translations/rc.cpp:3 rc.cpp:3
+msgctxt "HOMEPAGE OF TRANSLATORS"
+msgid "Your homepages"
+msgstr ""

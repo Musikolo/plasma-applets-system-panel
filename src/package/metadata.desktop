@@ -2,19 +2,17 @@
 Encoding=UTF-8
 Name=System panel
 Name[es]=Panel de sistema
+Name[fr]=Panneau système
 Comment=Plasma5 applet that displays a panel with a set of system actions
 Comment[es]=Plasma5 applet que muestra un panel con acciones de sistema
+Comment[fr]=Applet Plasma5 qui affiche un ensemble d'actions système
 
 Icon=system-shutdown
 Type=Service
 ServiceTypes=Plasma/Applet
 
-# X-KDE-Library=plasma_applet_systempanel
-# X-KDE-ServiceTypes=Plasma/Applet
-
 X-KDE-PluginInfo-Author=Carlos López Sánchez
 X-KDE-PluginInfo-Category=Utilities
-# X-KDE-PluginInfo-Depends=
 X-KDE-PluginInfo-Email=<musikolo{AT}hotmail[DOT]com> 
 X-KDE-PluginInfo-EnabledByDefault=true
 X-KDE-PluginInfo-License=GPL3
@@ -24,7 +22,6 @@ X-KDE-PluginInfo-Website=https://github.com/Musikolo
 
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
-# X-Plasma-RemoteLocation=
 X-Plasma-Requires-FileDialog=Unused
 X-Plasma-Requires-LaunchApp=Unused
 X-Plasma-StandAloneApp=true

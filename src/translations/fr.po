@@ -1,0 +1,158 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Bribanick dominique <chepioq@gmail.com>, 2016.
+# Carlos López Sánchez <musikolo@hotmail.com>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma5-applets-system-panel\n"
+"Report-Msgid-Bugs-To: http://kde-look.org/content/show.php/plasma5-applets-sys"
+"tem-panel?content=175309\n"
+"POT-Creation-Date: 2016-03-08 23:21-0600\n"
+"PO-Revision-Date: 2016-03-08 23:30-0600\n"
+"Last-Translator: Carlos López Sánchez <musikolo@hotmail.com>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: package/contents/code/data.js:7
+msgid "Standby"
+msgstr "En attente"
+
+#: package/contents/code/data.js:8
+msgid "Turn off the monitor to save energy"
+msgstr "Eteindre l'écran pour économiser l'énergie"
+
+#: package/contents/code/data.js:12 package/contents/ui/ConfigGeneral.qml:103
+msgid "Lock"
+msgstr "Verrouiller"
+
+#: package/contents/code/data.js:13
+msgid "Lock the screen"
+msgstr "Verrouiller l'écran"
+
+#: package/contents/code/data.js:18 package/contents/ui/ConfigGeneral.qml:122
+msgid "Switch user"
+msgstr "Changer d'utilisateur"
+
+#: package/contents/code/data.js:19
+msgid "Start a parallel session as a different user"
+msgstr "Démarre une session parallèle en tant qu'utilisateur différent"
+
+#: package/contents/code/data.js:23
+msgid "Leave..."
+msgstr "Quitter"
+
+#: package/contents/code/data.js:24
+msgid "Log out, turn off or restart the computer"
+msgstr "Déconnecter, éteindre ou redémarrer l'ordinateur"
+
+#: package/contents/code/data.js:28 package/contents/ui/ConfigGeneral.qml:153
+#: package/contents/ui/main.qml:156
+msgid "Suspend"
+msgstr "Passer en veille"
+
+#: package/contents/code/data.js:29
+msgid "Sleep (suspend to RAM)"
+msgstr "En veille (mettre en veille)"
+
+#: package/contents/code/data.js:34 package/contents/ui/ConfigGeneral.qml:134
+#: package/contents/ui/main.qml:140
+msgid "Hibernate"
+msgstr "Veille prolongée"
+
+#: package/contents/code/data.js:35
+msgid "Hibernate (suspend to disk)"
+msgstr "Veille prolongée (mettre en veille prolongée)"
+
+#: package/contents/config/config.qml:24
+msgid "General"
+msgstr "Général"
+
+#: package/contents/ui/ConfigGeneral.qml:68
+msgctxt "Heading for list of actions (leave, lock, shutdown, ...)"
+msgid "Actions"
+msgstr "Actions"
+
+#: package/contents/ui/ConfigGeneral.qml:79
+msgid "Turn off screen"
+msgstr "Éteindre l'écran"
+
+#: package/contents/ui/ConfigGeneral.qml:85
+#: package/contents/ui/ConfigGeneral.qml:97
+#: package/contents/ui/ConfigGeneral.qml:109
+#: package/contents/ui/ConfigGeneral.qml:128
+#: package/contents/ui/ConfigGeneral.qml:140
+#: package/contents/ui/ConfigGeneral.qml:159
+msgid "Enabled"
+msgstr "Activé"
+
+#: package/contents/ui/ConfigGeneral.qml:91
+msgid "Leave"
+msgstr "Quitter"
+
+#: package/contents/ui/ConfigGeneral.qml:116
+msgid "Turn off screen when locking"
+msgstr "Éteindre l'écran lors du verrouillage"
+
+#: package/contents/ui/ConfigGeneral.qml:147
+#: package/contents/ui/ConfigGeneral.qml:166
+msgid "Ask for confirmation"
+msgstr "Demander la confirmation"
+
+#: package/contents/ui/ConfigGeneral.qml:173
+msgctxt "Number of rows, columns..."
+msgid "Layout"
+msgstr "Disposition"
+
+#: package/contents/ui/ConfigGeneral.qml:180
+msgid "Inline best fit"
+msgstr "Ajuster les lignes"
+
+#: package/contents/ui/ConfigGeneral.qml:195
+msgid "rows"
+msgstr "lignes"
+
+#: package/contents/ui/ConfigGeneral.qml:210
+msgid "columns"
+msgstr "colonnes"
+
+#: package/contents/ui/main.qml:141
+msgid "Do you want to suspend to disk (hibernate)?"
+msgstr "Voulez-vous passer en veille prolongée (mode hibernation) ?"
+
+#: package/contents/ui/main.qml:144 package/contents/ui/main.qml:160
+msgid "Yes"
+msgstr "Oui"
+
+#: package/contents/ui/main.qml:145 package/contents/ui/main.qml:161
+msgid "No"
+msgstr "Non"
+
+#: package/contents/ui/main.qml:157
+msgid "Do you want to suspend to RAM (sleep)?"
+msgstr "Voulez-vous passer en veille ?"
+
+#: translations/rc.cpp:1 rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Dominique Bribanick"
+
+#: translations/rc.cpp:2 rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "chepioq[AT]gmail{DOT}com"
+
+#: translations/rc.cpp:3 rc.cpp:3
+#, fuzzy
+msgctxt "HOMEPAGE OF TRANSLATORS"
+msgid "Your homepages"
+msgstr ""
+"http://kde-look.org/content/show.php/plasma5-applets-system-panel?content=1753"
+"09"
+

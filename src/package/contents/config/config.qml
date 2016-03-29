@@ -25,5 +25,10 @@ ConfigModel {
          icon: "system-shutdown"
          source: "ConfigGeneral.qml"
     }
+    ConfigCategory {
+         name: i18nc("Layout or distribution of the buttons", "Layout")
+         icon: "system-shutdown"
+         source: "ConfigLayout.qml"
+    }
 }
 

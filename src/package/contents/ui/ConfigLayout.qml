@@ -16,21 +16,29 @@
 */
 
 import QtQuick 2.0
-import QtQuick.Dialogs 1.0
-import org.kde.plasma.components 2.0
-
-import QtQuick.Layouts 1.1 as QtLayouts
 import QtQuick.Controls 1.1 as QtControls
+import QtQuick.Dialogs 1.0
+import QtQuick.Layouts 1.1 as QtLayouts
+
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.components 2.0
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import "../code/data.js" as Data
     
 Item {
-
     readonly property int defaultIconSize: 64
     property var selectedToolButton
+    property var selectedToolButtonData
     property var selectedIcon
     property var selectedIconData
+
+    property alias cfg_layoutData : cfgStore.text
+
+    QtControls.Label {
+        id : cfgStore
+        text : cfg_layoutData
+        visible:  false
+    }
 
     FileDialog {
         id: fileDialog
@@ -40,16 +48,23 @@ Item {
         onAccepted: {
             if(selectedToolButton){
                 console.log("Chosen file icon is", fileDialog.fileUrl)
-                selectedToolButton.iconSource = fileDialog.fileUrl
+                var icon = getIconName(fileDialog.fileUrl)
+                selectedToolButton.iconSource = icon
                 selectedToolButton = null
+                
+                Data.store.updateOperationIcon(selectedToolButtonData.operation, icon)
+                selectedToolButtonData = null
+                
+                var json = Data.store.getBasicJsonData()
+                cfgStore.text = json
             }
             Qt.quit()
         }
         onRejected: {
             selectedToolButton = null
+            selectedToolButtonData = null
             Qt.quit()
         }
-//        Component.onCompleted: visible = true
     }
 
     QtLayouts.ColumnLayout {
@@ -67,20 +82,20 @@ Item {
             id: actionRadioGroup
         }        
         QtControls.RadioButton {
-            id: changeIconsAction
-            anchors.left: parent.left
-            anchors.leftMargin: 10
-            text: "Change icons"
-            checked: true
-            exclusiveGroup: actionRadioGroup
-            onClicked: uncheckToolButtons()
-        }
-        QtControls.RadioButton {
             id: rearrangeIconsAction
             anchors.left: parent.left
             anchors.leftMargin: 10
             text: "Rearrange icons"
+            checked: true
             exclusiveGroup: actionRadioGroup
+        }
+        QtControls.RadioButton {
+            id: changeIconsAction
+            anchors.left: parent.left
+            anchors.leftMargin: 10
+            text: "Change icons"
+            exclusiveGroup: actionRadioGroup
+            onClicked: uncheckToolButtons()
         }
 
         Row {
@@ -96,7 +111,7 @@ Item {
             
             Repeater {
                 id:iconList
-                model: Data.data
+                model: Data.store.getData()
                 delegate: ToolButton {
                     iconSource: modelData.icon
                     checkable: rearrangeIconsAction.checked
@@ -107,7 +122,7 @@ Item {
                     }
                     onClicked: {
                         if(changeIconsAction.checked){
-                            chooseIconFile(this)
+                            chooseIconFile(this, modelData)
                         }
                         else {
                             selectIcon(this, modelData)
@@ -126,6 +141,30 @@ Item {
                 onClicked: moveIcon("RIGHT")
             }
         }
+        
+        ToolButton {
+            id: restore
+            iconSource: "edit-undo"
+            width: 90
+            height: 48
+            text: i18n("Reset")
+            tooltip: i18n("Reset all current changes to previous values")
+            onClicked: restoreDefaults()
+        }
+    }
+    
+    function getIconName(icon){
+        
+        if( icon && icon.toString){
+            icon = icon.toString()
+        }
+        
+        var lastSlashIdx = icon.lastIndexOf('/')
+        if(lastSlashIdx > -1 && lastSlashIdx < icon.length && icon.substr(-4)==".svg"){
+            icon = icon.slice(lastSlashIdx + 1, -4)
+        }
+
+        return icon
     }
     
     function uncheckToolButtons(){
@@ -136,10 +175,11 @@ Item {
         }
     }
     
-    function chooseIconFile(toolButton){
+    function chooseIconFile(toolButton, modelData){
 
         console.log("Clicked on", toolButton.iconSource)
         selectedToolButton = toolButton
+        selectedToolButtonData = modelData
         fileDialog.open();
     }
     
@@ -168,45 +208,45 @@ Item {
     function moveIcon(direction){
         
         if(selectedIconData){
-            var idx;
-            for(idx=0; idx < iconList.count;idx++){
-                if(iconList.model[idx].operation==selectedIconData.operation){
-                    console.log("Found idx=" ,idx)
-                    break;
+            var currentPosition = Data.store.getOperationPosition(selectedIconData.operation);
+            if(currentPosition < iconList.count){
+
+                var newPosition = -1
+                if(direction == "LEFT" && currentPosition > 0){
+                    newPosition = currentPosition - 1;
                 }
-            }
-            
-            if(idx < iconList.count){
-                var idxTarget = -1
-                if(direction == "LEFT" && idx > 0){
-                    idxTarget = idx - 1;
-                }
-                else if(direction == "RIGHT" && idx < iconList.count - 1) {
-                    idxTarget = idx + 1;
+                else if(direction == "RIGHT" && currentPosition < iconList.count - 1) {
+                    newPosition = currentPosition + 1;
                 }
                 
-                if(idxTarget > -1){
-                    console.log("Moving idx=", idx, "to", idxTarget)
-                    var array = Data.data
-                    
-                    var tmp = array[idx]
-                    array[idx]=array[idxTarget]
-                    array[idxTarget]=tmp
+                if(newPosition > -1){
+                    var success = Data.store.updateOperationPosition(selectedIconData.operation, newPosition)
+                    if(success){
+                        iconList.model = Data.store.getData()
+                        selectedIcon = iconList.itemAt(newPosition)
+                        selectedIcon.checked = true
 
-                    Data.data = array
-                    iconList.model = array
-                    selectedIcon = iconList.itemAt(idxTarget)
-                    selectedIcon.checked = true
-                    
-                    console.log("moveIcon done")
+                        var json = Data.store.getBasicJsonData()
+                        cfgStore.text = json
+                        console.log("moveIcon done")
+                    }
+                    else {
+                        console.error("updateOperationIcon success = false")
+                    }
                 }
                 else {
                     console.log("Cannot be moved")
                 }
             }
             else {
-                console.error("Item not found!")
+                console.error("Operation=",selectedIconData.operation, "not found!")
             }
         }
+    }
+    
+    function restoreDefaults(){
+
+        iconList.model = Data.store.restore()
+        cfgStore.text = Data.store.getBasicJsonData()
     }
 }

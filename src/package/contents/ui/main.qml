@@ -101,7 +101,7 @@ Item {
             property int itemWidth: Math.floor(parent.width/parent.columns)
             property int itemHeight: Math.floor(parent.height/parent.rows)
             property int iconSize: Math.min(itemWidth, itemHeight)
-            model: Data.data
+            model: Data.store.getConfigData()
             
             PlasmaCore.IconItem {
                 id: iconButton

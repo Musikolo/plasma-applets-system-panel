@@ -26,9 +26,9 @@ ConfigModel {
          source: "ConfigGeneral.qml"
     }
     ConfigCategory {
-         name: i18nc("Layout or distribution of the buttons", "Layout")
-         icon: "preferences-desktop"
-         source: "ConfigLayout.qml"
+         name: i18nc("Icon and location of the icon of each action", "Icon settings")
+         icon: "preferences-desktop-color"
+         source: "ConfigIconSettings.qml"
     }
 }
 

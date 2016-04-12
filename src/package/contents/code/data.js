@@ -2,9 +2,7 @@ var store = function(){
     
     var operationIdx = null
     var defaultData = [{
-//TODO: Find a way to remove the hard-code path for this icon:
-//             icon: "system-standby",
-            icon: "/usr/share/icons/breeze/apps/%s/system-standby",
+            icon: "system-standby",
             operation: "turnOffScreen",
             tooltip_mainText: i18n("Standby"),
             tooltip_subText: i18n("Turn off the monitor to save energy")

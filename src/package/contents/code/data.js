@@ -74,41 +74,29 @@ var store = function(){
         
         console.log("Swapping position from", currentPosition, "to", newPosition )
         var success = false
-        if( currentPosition > newPosition ){
-            var item = myData[currentPosition];
-            myData.splice(currentPosition, 1);
-            myData.splice(newPosition, 0, item)
-            success = true
-        }
-        else {
-            var item = myData[currentPosition];
-            myData.splice(currentPosition, 1);
-            myData.splice(newPosition, 0, item)
-            
-            success = true
-        }
-        
+        var item = myData[currentPosition];
+        myData.splice(currentPosition, 1);
+        myData.splice(newPosition, 0, item)
+        success = true
+     
         return success
     }
         
-    function initData(){
+    function syncData(){
         
-        console.log("Initializing data...")
+        console.log("Synchronizing data...")
         var cfgData = plasmoid.configuration.layoutData
         if(cfgData){
-console.log("Parsing data", cfgData)
+            console.log("Parsing data", cfgData)
             cfgData = JSON.parse(cfgData)
             if(cfgData && cfgData.length > 0){
                 var newData = []
                 var operationIdx = getOperationIdx()
                 for(var i = 0; i < cfgData.length; i++){
                     var item = cfgData[i]
-//TODO:console.log("item.operation",item.operation)
                     var itemIdx = operationIdx[item.operation]
-//TODO:console.log("itemIdx", itemIdx)
                     var defaultItem = myData[itemIdx]
                     defaultItem.icon = item.icon
-//TODO:console.log("defaultItem.icon",defaultItem.icon)
                     newData[newData.length]=defaultItem
                 }
                 
@@ -116,11 +104,9 @@ console.log("Parsing data", cfgData)
                 resetOperationIdx()
             }
         }
-        console.log("Data initialized successfully!")
+        console.log("Data synchronized successfully!")
     }
 
-    initData()
-    
     return {
         getOperationPosition: function(operation){
             
@@ -173,7 +159,7 @@ console.log("Parsing data", cfgData)
         ,getConfigData: function(){
             
             console.log("getConfigData", myData)
-            initData();
+            syncData();
              
             return myData;
         }
@@ -183,8 +169,6 @@ console.log("Parsing data", cfgData)
             if(myData){
                  var basicData = []
                  for( var i = 0; i < myData.length; i++){
-//TODO: Clean up
-// console.log(myData[i].icon, myData[i].operation)
                      basicData[i] = {'icon':myData[i].icon, 'operation':myData[i].operation}
                  }
                  

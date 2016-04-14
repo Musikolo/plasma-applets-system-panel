@@ -114,8 +114,6 @@ Item {
                 
                 width: items.iconSize
                 height: items.iconSize
-//TODO: Clean up
-//                source: provideIcon(modelData.icon, modelData.operation, true)
                 source: modelData.icon
 
                 MouseArea {
@@ -128,8 +126,6 @@ Item {
                         anchors.fill: parent
                         mainText: modelData.tooltip_mainText
                         subText: modelData.tooltip_subText
-//TODO: Clean up
-//                        icon: provideIcon(modelData.icon, modelData.operation, false)
                         icon: modelData.icon
                     }
                 }
@@ -172,26 +168,6 @@ Item {
     SystemPanel {
         id: systemPanel
     }
-    
-    //TODO: Find a way to remove this workaround
-//     function provideIcon(iconName, operation, scaleNeeded) {
-//         
-//         var value = iconName
-//         
-//         if(operation == "turnOffScreen"){
-//             if(items.iconSize >=32 || !scaleNeeded){
-//                 value = value.replace("%s", "32")
-//             }
-//             else if(items.iconSize >=22){
-//                 value = value.replace("%s", "22")
-//             }
-//             else {
-//                 value = value.replace("%s", "16")
-//             }
-//         }
-//         
-//         return value
-//     }
     
     function clickHandler(what, button) {
         if (what == "suspendToDisk" && plasmoid.configuration.hibernateConfirmation) {

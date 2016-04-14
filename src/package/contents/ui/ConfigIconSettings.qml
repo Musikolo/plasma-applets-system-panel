@@ -116,7 +116,7 @@ Item {
             
             Repeater {
                 id:iconList
-                model: Data.store.getData()
+                model: Data.store.getConfigData()
                 delegate: ToolButton {
                     iconSource: modelData.icon
                     checkable: rearrangeIconsAction.checked

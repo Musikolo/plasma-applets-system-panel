@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: plasma5-applets-system-panel\n"
 "Report-Msgid-Bugs-To: http://kde-look.org/content/show.php/plasma5-applets-sys"
 "tem-panel?content=175309\n"
-"POT-Creation-Date: 2016-03-08 23:21-0600\n"
-"PO-Revision-Date: 2016-03-08 23:30-0600\n"
+"POT-Creation-Date: 2016-04-13 22:58-0500\n"
+"PO-Revision-Date: 2016-04-13 23:05-0600\n"
 "Last-Translator: Carlos López Sánchez <musikolo@hotmail.com>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "Language: fr\n"
@@ -28,7 +28,7 @@ msgstr "En attente"
 msgid "Turn off the monitor to save energy"
 msgstr "Eteindre l'écran pour économiser l'énergie"
 
-#: package/contents/code/data.js:12 package/contents/ui/ConfigGeneral.qml:103
+#: package/contents/code/data.js:12 package/contents/ui/ConfigGeneral.qml:99
 msgid "Lock"
 msgstr "Verrouiller"
 
@@ -36,7 +36,7 @@ msgstr "Verrouiller"
 msgid "Lock the screen"
 msgstr "Verrouiller l'écran"
 
-#: package/contents/code/data.js:18 package/contents/ui/ConfigGeneral.qml:122
+#: package/contents/code/data.js:18 package/contents/ui/ConfigGeneral.qml:118
 msgid "Switch user"
 msgstr "Changer d'utilisateur"
 
@@ -52,7 +52,7 @@ msgstr "Quitter"
 msgid "Log out, turn off or restart the computer"
 msgstr "Déconnecter, éteindre ou redémarrer l'ordinateur"
 
-#: package/contents/code/data.js:28 package/contents/ui/ConfigGeneral.qml:153
+#: package/contents/code/data.js:28 package/contents/ui/ConfigGeneral.qml:149
 #: package/contents/ui/main.qml:156
 msgid "Suspend"
 msgstr "Passer en veille"
@@ -61,7 +61,7 @@ msgstr "Passer en veille"
 msgid "Sleep (suspend to RAM)"
 msgstr "En veille (mettre en veille)"
 
-#: package/contents/code/data.js:34 package/contents/ui/ConfigGeneral.qml:134
+#: package/contents/code/data.js:34 package/contents/ui/ConfigGeneral.qml:130
 #: package/contents/ui/main.qml:140
 msgid "Hibernate"
 msgstr "Veille prolongée"
@@ -74,53 +74,115 @@ msgstr "Veille prolongée (mettre en veille prolongée)"
 msgid "General"
 msgstr "Général"
 
-#: package/contents/ui/ConfigGeneral.qml:68
+#: package/contents/config/config.qml:29
+msgctxt "Icon and location of the icon of each action"
+msgid "Icon settings"
+msgstr "Configuration des icônes"
+
+#: package/contents/ui/ConfigGeneral.qml:64
 msgctxt "Heading for list of actions (leave, lock, shutdown, ...)"
 msgid "Actions"
 msgstr "Actions"
 
-#: package/contents/ui/ConfigGeneral.qml:79
+#: package/contents/ui/ConfigGeneral.qml:75
 msgid "Turn off screen"
 msgstr "Éteindre l'écran"
 
-#: package/contents/ui/ConfigGeneral.qml:85
-#: package/contents/ui/ConfigGeneral.qml:97
-#: package/contents/ui/ConfigGeneral.qml:109
-#: package/contents/ui/ConfigGeneral.qml:128
-#: package/contents/ui/ConfigGeneral.qml:140
-#: package/contents/ui/ConfigGeneral.qml:159
+#: package/contents/ui/ConfigGeneral.qml:81
+#: package/contents/ui/ConfigGeneral.qml:93
+#: package/contents/ui/ConfigGeneral.qml:105
+#: package/contents/ui/ConfigGeneral.qml:124
+#: package/contents/ui/ConfigGeneral.qml:136
+#: package/contents/ui/ConfigGeneral.qml:155
 msgid "Enabled"
 msgstr "Activé"
 
-#: package/contents/ui/ConfigGeneral.qml:91
+#: package/contents/ui/ConfigGeneral.qml:87
 msgid "Leave"
 msgstr "Quitter"
 
-#: package/contents/ui/ConfigGeneral.qml:116
+#: package/contents/ui/ConfigGeneral.qml:112
 msgid "Turn off screen when locking"
 msgstr "Éteindre l'écran lors du verrouillage"
 
-#: package/contents/ui/ConfigGeneral.qml:147
-#: package/contents/ui/ConfigGeneral.qml:166
+#: package/contents/ui/ConfigGeneral.qml:143
+#: package/contents/ui/ConfigGeneral.qml:162
 msgid "Ask for confirmation"
 msgstr "Demander la confirmation"
 
-#: package/contents/ui/ConfigGeneral.qml:173
+#: package/contents/ui/ConfigGeneral.qml:169
 msgctxt "Number of rows, columns..."
 msgid "Layout"
 msgstr "Disposition"
 
-#: package/contents/ui/ConfigGeneral.qml:180
+#: package/contents/ui/ConfigGeneral.qml:176
 msgid "Inline best fit"
 msgstr "Ajuster les lignes"
 
-#: package/contents/ui/ConfigGeneral.qml:195
+#: package/contents/ui/ConfigGeneral.qml:191
 msgid "rows"
 msgstr "lignes"
 
-#: package/contents/ui/ConfigGeneral.qml:210
+#: package/contents/ui/ConfigGeneral.qml:206
 msgid "columns"
 msgstr "colonnes"
+
+#: package/contents/ui/ConfigIconSettings.qml:43
+msgid "Please choose a file"
+msgstr "Choisissez un fichier"
+
+#: package/contents/ui/ConfigIconSettings.qml:44
+msgid "Icons only (*.svg *.png *.jpg *.jpeg)"
+msgstr "N'afficher que les icônes (*.svg *.png *.jpg *.jpeg)"
+
+#: package/contents/ui/ConfigIconSettings.qml:44
+msgid "All files (*)"
+msgstr "Tous les fichiers (*)"
+
+#: package/contents/ui/ConfigIconSettings.qml:70
+msgid "Customize & rearrange icons"
+msgstr "Personnaliser et réorganiser les icônes"
+
+#: package/contents/ui/ConfigIconSettings.qml:76
+msgctxt "Actions for the available radio buttons"
+msgid "Action:"
+msgstr "Actions"
+
+#: package/contents/ui/ConfigIconSettings.qml:85
+msgid "Rearrange icons"
+msgstr "Réorganiser les icônes"
+
+#: package/contents/ui/ConfigIconSettings.qml:93
+msgid "Change icons with system icons (recommended)"
+msgstr "Modifier les icônes avec les icônes du système (recommandé)"
+
+#: package/contents/ui/ConfigIconSettings.qml:101
+msgid "Change icons with user-defined icons"
+msgstr "Modifier les icônes avec des icônes personnels"
+
+#: package/contents/ui/ConfigIconSettings.qml:112
+msgid "Move icon to the left"
+msgstr "Déplacer l'icône vers la gauche"
+
+#: package/contents/ui/ConfigIconSettings.qml:126
+msgid "Click to select and move icon"
+msgstr "Cliquer pour choisir et déplacer l'icône"
+
+#: package/contents/ui/ConfigIconSettings.qml:126
+msgid "Click to change icon"
+msgstr "Cliquer pour modifier l'icône"
+
+#: package/contents/ui/ConfigIconSettings.qml:144
+msgid "Move icon to the right"
+msgstr "Déplacer l'icône vers la droite"
+
+#: package/contents/ui/ConfigIconSettings.qml:155
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#: package/contents/ui/ConfigIconSettings.qml:156
+msgid "Reset all current changes to previous values"
+msgstr "Réinitialiser tous les modifications aux valeurs précédentes"
 
 #: package/contents/ui/main.qml:141
 msgid "Do you want to suspend to disk (hibernate)?"
@@ -149,10 +211,9 @@ msgid "Your emails"
 msgstr "chepioq[AT]gmail{DOT}com"
 
 #: translations/rc.cpp:3 rc.cpp:3
-#, fuzzy
 msgctxt "HOMEPAGE OF TRANSLATORS"
 msgid "Your homepages"
 msgstr ""
-"http://kde-look.org/content/show.php/plasma5-applets-system-panel?content=1753"
-"09"
+"http://kde-look.org/content/show.php/plasma5-applets-system-panel?"
+"content=175309"
 

@@ -31,4 +31,3 @@ ConfigModel {
          source: "ConfigIconSettings.qml"
     }
 }
-

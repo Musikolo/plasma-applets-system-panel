@@ -101,7 +101,7 @@ Item {
             property int itemWidth: Math.floor(parent.width/parent.columns)
             property int itemHeight: Math.floor(parent.height/parent.rows)
             property int iconSize: Math.min(itemWidth, itemHeight)
-            model: Data.data
+            model: Data.store.getConfigData()
             
             PlasmaCore.IconItem {
                 id: iconButton
@@ -114,7 +114,7 @@ Item {
                 
                 width: items.iconSize
                 height: items.iconSize
-                source: provideIcon(modelData.icon, modelData.operation, true)
+                source: modelData.icon
 
                 MouseArea {
                     id: mouseArea
@@ -126,7 +126,7 @@ Item {
                         anchors.fill: parent
                         mainText: modelData.tooltip_mainText
                         subText: modelData.tooltip_subText
-                        icon: provideIcon(modelData.icon, modelData.operation, false)
+                        icon: modelData.icon
                     }
                 }
             } 
@@ -167,26 +167,6 @@ Item {
 
     SystemPanel {
         id: systemPanel
-    }
-    
-    //TODO: Find a way to remove this workaround
-    function provideIcon(iconName, operation, scaleNeeded) {
-        
-        var value = iconName
-        
-        if(operation == "turnOffScreen"){
-            if(items.iconSize >=32 || !scaleNeeded){
-                value = value.replace("%s", "32")
-            }
-            else if(items.iconSize >=22){
-                value = value.replace("%s", "22")
-            }
-            else {
-                value = value.replace("%s", "16")
-            }
-        }
-        
-        return value
     }
     
     function clickHandler(what, button) {

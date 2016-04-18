@@ -16,7 +16,7 @@
 */
 
 import QtQuick 2.0
-import QtQuick.Layouts 1.1 as QtLayouts
+import QtQuick.Layouts 1.0 as QtLayouts
 import QtQuick.Controls 1.0 as QtControls
 
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -50,10 +50,6 @@ Item {
     readonly property bool hibernateEnabled: dataEngine.data["Sleep States"].Hibernate
 
     readonly property int defaultLeftMargin: 10
-
-    SystemPalette {
-        id: sypal
-    }
 
     PlasmaCore.DataSource {
         id: dataEngine
@@ -178,7 +174,7 @@ Item {
         QtControls.CheckBox {
             id: inlineBestFit
             text: i18n("Inline best fit")
-            checked: cfg_inlineBestFit || numVisibleButtons <= 1
+            checked: numVisibleButtons <= 1
         }
 
         QtControls.SpinBox{

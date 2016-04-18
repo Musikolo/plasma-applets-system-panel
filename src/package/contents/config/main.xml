@@ -43,6 +43,7 @@
       <default>3</default>
     </entry>
   </group>
-
+  <group name="Layout">
+      <entry name="layoutData" type="String"/>
+  </group>
 </kcfg>
-

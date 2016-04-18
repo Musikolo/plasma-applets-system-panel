@@ -25,5 +25,9 @@ ConfigModel {
          icon: "system-shutdown"
          source: "ConfigGeneral.qml"
     }
+    ConfigCategory {
+         name: i18nc("Icon and location of the icon of each action", "Icon settings")
+         icon: "preferences-desktop-color"
+         source: "ConfigIconSettings.qml"
+    }
 }
-

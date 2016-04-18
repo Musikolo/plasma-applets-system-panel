@@ -18,6 +18,8 @@ Plasma5 applet that displays a panel with a set of system actions
 
 ## Other features
 - Supports different layouts
+- Ability to rearrange icons
+- Fully customizable icons
 
 ## Supported languages
 - English (default)

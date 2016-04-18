@@ -46,5 +46,4 @@
   <group name="Layout">
       <entry name="layoutData" type="String"/>
   </group>
-
 </kcfg>

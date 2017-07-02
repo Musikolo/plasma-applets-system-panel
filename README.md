@@ -2,11 +2,11 @@
 Plasma5 applet that displays a panel with a set of system actions
 
 ## Screenshots:
-![alt tag](http://kde-apps.org/CONTENT/content-pre1/175309-1.png)
+![alt tag](https://cn.pling.com/img//hive/content-pre1/175309-1.png)
 ---
-![alt tag](http://kde-apps.org/CONTENT/content-pre2/175309-2.png)
+![alt tag](https://cn.pling.com/img//hive/content-pre2/175309-2.png)
 ---
-![alt tag](http://kde-apps.org/CONTENT/content-pre3/175309-3.png)
+![alt tag](https://cn.pling.com/img//hive/content-pre3/175309-3.png)
 
 ## Supported actions:
 - Standby (turn off monitor to save energy)

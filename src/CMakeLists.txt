@@ -20,3 +20,4 @@ add_subdirectory(translations)
 plasma_install_package(package org.kde.plasma.systempanel)
 
 install( DIRECTORY image/breeze DESTINATION ${ICON_INSTALL_DIR})
+install( DIRECTORY image/breeze-dark DESTINATION ${ICON_INSTALL_DIR})

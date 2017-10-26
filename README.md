@@ -20,6 +20,7 @@ Plasma5 applet that displays a panel with a set of system actions
 - Supports different layouts
 - Ability to rearrange icons
 - Fully customizable icons
+- Integration with Breeze and Breeze Dark themes
 
 ## Supported languages
 - English (default)

@@ -1,7 +1,8 @@
 # (0) Minimum Requirements (tested, but might be lower)
-- Qt               >= 5.4.0 
-- KDE Workspace    >= 5.4.0
-- Plasma Framework >= 5.19
+- Qt                    >= 5.4.0
+- KDE Workspace         >= 5.4.0
+- Plasma Framework      >= 5.19
+- extra-cmake-modules   >= 5.38.0
 
 # (1) Standard way: having root permission
 cd /path/to/system_panel/

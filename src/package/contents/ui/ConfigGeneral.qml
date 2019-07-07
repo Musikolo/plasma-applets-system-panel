@@ -15,8 +15,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.0 as QtLayouts
+import QtQuick 2.1
+import QtQuick.Layouts 1.11
 import QtQuick.Controls 1.0 as QtControls
 
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -57,7 +57,9 @@ Item {
         connectedSources: ["Sleep States"]
     }
     
-    QtLayouts.ColumnLayout {
+    SystemPalette { id: syspal }
+
+    ColumnLayout {
         id: pageColumn
 
         PlasmaExtras.Heading {
@@ -76,8 +78,8 @@ Item {
                 }
                 QtControls.CheckBox {
                     id: turnOffScreen
-                    anchors.left: parent.left
-                    anchors.leftMargin: defaultLeftMargin
+                    Layout.alignment : Qt.AlignLeft
+                    Layout.leftMargin: defaultLeftMargin
                     text: i18n("Enabled")
                     enabled: (numVisibleButtons > 1 || !checked)
                 }
@@ -88,8 +90,8 @@ Item {
                 }
                 QtControls.CheckBox {
                     id: leave
-                    anchors.left: parent.left
-                    anchors.leftMargin: defaultLeftMargin
+                    Layout.alignment : Qt.AlignLeft
+                    Layout.leftMargin: defaultLeftMargin
                     text: i18n("Enabled")
                     enabled: iconsPage.lockScreenEnabled && (numVisibleButtons > 1 || !checked)
                 }
@@ -100,15 +102,15 @@ Item {
                 }
                 QtControls.CheckBox {
                     id: lock
-                    anchors.left: parent.left
-                    anchors.leftMargin: defaultLeftMargin
+                    Layout.alignment : Qt.AlignLeft
+                    Layout.leftMargin: defaultLeftMargin
                     text: i18n("Enabled")
                     enabled: numVisibleButtons > 1 || !checked
                 }
                 QtControls.CheckBox {
                     id: lockTurnOffScreen
-                    anchors.left: parent.left
-                    anchors.leftMargin: defaultLeftMargin
+                    Layout.alignment : Qt.AlignLeft
+                    Layout.leftMargin: defaultLeftMargin
                     text: i18n("Turn off screen when locking")
                     enabled: lock.checked
                 }
@@ -119,8 +121,8 @@ Item {
                 }
                 QtControls.CheckBox {
                     id: switchUser
-                    anchors.left: parent.left
-                    anchors.leftMargin: defaultLeftMargin
+                    Layout.alignment : Qt.AlignLeft
+                    Layout.leftMargin: defaultLeftMargin
                     text: i18n("Enabled")
                     enabled: numVisibleButtons > 1 || !checked
                 }
@@ -131,15 +133,15 @@ Item {
                 }
                 QtControls.CheckBox {
                     id: hibernate
-                    anchors.left: parent.left
-                    anchors.leftMargin: defaultLeftMargin
+                    Layout.alignment : Qt.AlignLeft
+                    Layout.leftMargin: defaultLeftMargin
                     text: i18n("Enabled")
                     enabled: iconsPage.hibernateEnabled && (numVisibleButtons > 1 || !checked)
                 }
                 QtControls.CheckBox {
                     id: hibernateConfirmation
-                    anchors.left: parent.left
-                    anchors.leftMargin: defaultLeftMargin
+                    Layout.alignment : Qt.AlignLeft
+                    Layout.leftMargin: defaultLeftMargin
                     text: i18n("Ask for confirmation")
                     enabled: hibernate.checked
                 }
@@ -150,15 +152,15 @@ Item {
                 }
                 QtControls.CheckBox {
                     id: sleep
-                    anchors.left: parent.left
-                    anchors.leftMargin: defaultLeftMargin
+                    Layout.alignment : Qt.AlignLeft
+                    Layout.leftMargin: defaultLeftMargin
                     text: i18n("Enabled")
                     enabled: iconsPage.suspendEnabled && (numVisibleButtons > 1 || !checked)
                 }
                 QtControls.CheckBox {
                     id: sleepConfirmation
-                    anchors.left: parent.left
-                    anchors.leftMargin: defaultLeftMargin
+                    Layout.alignment : Qt.AlignLeft
+                    Layout.leftMargin: defaultLeftMargin
                     text: i18n("Ask for confirmation")
                     enabled: sleep.checked
                 }

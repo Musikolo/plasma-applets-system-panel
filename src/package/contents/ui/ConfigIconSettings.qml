@@ -15,10 +15,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
+import QtQuick 2.1
 import QtQuick.Controls 1.1 as QtControls
-import QtQuick.Dialogs 1.0
-import QtQuick.Layouts 1.1 as QtLayouts
+import QtQuick.Dialogs 1.3
+import QtQuick.Layouts 1.11
 
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0
@@ -64,7 +64,9 @@ Item {
         }
     }
 
-    QtLayouts.ColumnLayout {
+    SystemPalette { id: syspal }
+
+    ColumnLayout {
 
         PlasmaExtras.Heading {
             text: i18n("Customize & rearrange icons")
@@ -80,24 +82,24 @@ Item {
         }        
         QtControls.RadioButton {
             id: rearrangeIconsAction
-            anchors.left: parent.left
-            anchors.leftMargin: 10
+            Layout.alignment : Qt.AlignLeft
+            Layout.leftMargin: 10
             text: i18n("Rearrange icons")
             checked: true
             exclusiveGroup: actionRadioGroup
         }
         QtControls.RadioButton {
             id: changeSystemIconsAction
-            anchors.left: parent.left
-            anchors.leftMargin: 10
+            Layout.alignment : Qt.AlignLeft
+            Layout.leftMargin: 10
             text: i18n("Change icons with system icons (recommended)")
             exclusiveGroup: actionRadioGroup
             onClicked: uncheckToolButtons()
         }
         QtControls.RadioButton {
             id: changeUserIconsAction
-            anchors.left: parent.left
-            anchors.leftMargin: 10
+            Layout.alignment : Qt.AlignLeft
+            Layout.leftMargin: 10
             text: i18n("Change icons with user-defined icons")
             exclusiveGroup: actionRadioGroup
             onClicked: uncheckToolButtons()

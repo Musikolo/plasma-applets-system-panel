@@ -1,4 +1,11 @@
 ---------------------
+2019-07-07 - v.1.5.0
+---------------------
+- Upgrade some QtQuick imports
+- Update standby icons for breeze & breeze-dark themes
+- Remove compilation override warning
+
+---------------------
 2017-10-26 - v.1.4.0
 ---------------------
 - Add breeze-dark theme icons

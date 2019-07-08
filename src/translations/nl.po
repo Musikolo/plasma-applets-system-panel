@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://kde-look.org/content/show.php/plasma5-applets-"
+"system-panel?content=175309\n"
+"POT-Creation-Date: 2016-04-13 22:58-0500\n"
+"PO-Revision-Date: 2019-07-08 12:09+0200\n"
+"Language-Team: Dutch <vistausss@outlook.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl_NL\n"
+
+#: package/contents/code/data.js:7
+msgid "Standby"
+msgstr "Standby"
+
+#: package/contents/code/data.js:8
+msgid "Turn off the monitor to save energy"
+msgstr "Schakel het scherm uit om stroom te besparen"
+
+#: package/contents/code/data.js:12 package/contents/ui/ConfigGeneral.qml:99
+msgid "Lock"
+msgstr "Vergrendelen"
+
+#: package/contents/code/data.js:13
+msgid "Lock the screen"
+msgstr "Vergrendel het scherm"
+
+#: package/contents/code/data.js:18 package/contents/ui/ConfigGeneral.qml:118
+msgid "Switch user"
+msgstr "Andere gebruiker"
+
+#: package/contents/code/data.js:19
+msgid "Start a parallel session as a different user"
+msgstr "Start een tweede sessie als andere gebruiker"
+
+#: package/contents/code/data.js:23
+msgid "Leave..."
+msgstr "Verlaten..."
+
+#: package/contents/code/data.js:24
+msgid "Log out, turn off or restart the computer"
+msgstr "Afmelden, uitschakelen of opnieuw opstarten"
+
+#: package/contents/code/data.js:28 package/contents/ui/ConfigGeneral.qml:149
+#: package/contents/ui/main.qml:156
+msgid "Suspend"
+msgstr "Pauzestand"
+
+#: package/contents/code/data.js:29
+msgid "Sleep (suspend to RAM)"
+msgstr "Pauzeren (pauzeren naar RAM)"
+
+#: package/contents/code/data.js:34 package/contents/ui/ConfigGeneral.qml:130
+#: package/contents/ui/main.qml:140
+msgid "Hibernate"
+msgstr "Slaapstand"
+
+#: package/contents/code/data.js:35
+msgid "Hibernate (suspend to disk)"
+msgstr "Slaapstand (pauzeren naar schijf)"
+
+#: package/contents/config/config.qml:24
+msgid "General"
+msgstr "Algemeen"
+
+#: package/contents/config/config.qml:29
+msgctxt "Icon and location of the icon of each action"
+msgid "Icon settings"
+msgstr "Pictograminstellingen"
+
+#: package/contents/ui/ConfigGeneral.qml:64
+msgctxt "Heading for list of actions (leave, lock, shutdown, ...)"
+msgid "Actions"
+msgstr "Acties"
+
+#: package/contents/ui/ConfigGeneral.qml:75
+msgid "Turn off screen"
+msgstr "Scherm uitschakelen"
+
+#: package/contents/ui/ConfigGeneral.qml:81
+#: package/contents/ui/ConfigGeneral.qml:93
+#: package/contents/ui/ConfigGeneral.qml:105
+#: package/contents/ui/ConfigGeneral.qml:124
+#: package/contents/ui/ConfigGeneral.qml:136
+#: package/contents/ui/ConfigGeneral.qml:155
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+#: package/contents/ui/ConfigGeneral.qml:87
+msgid "Leave"
+msgstr "Verlaten"
+
+#: package/contents/ui/ConfigGeneral.qml:112
+msgid "Turn off screen when locking"
+msgstr "Scherm uitschakelen na vergrendelen"
+
+#: package/contents/ui/ConfigGeneral.qml:143
+#: package/contents/ui/ConfigGeneral.qml:162
+msgid "Ask for confirmation"
+msgstr "Vragen om bevestiging"
+
+#: package/contents/ui/ConfigGeneral.qml:169
+msgctxt "Number of rows, columns..."
+msgid "Layout"
+msgstr "Indeling"
+
+#: package/contents/ui/ConfigGeneral.qml:176
+msgid "Inline best fit"
+msgstr "Best passend"
+
+#: package/contents/ui/ConfigGeneral.qml:191
+msgid "rows"
+msgstr "rijen"
+
+#: package/contents/ui/ConfigGeneral.qml:206
+msgid "columns"
+msgstr "kolommen"
+
+#: package/contents/ui/ConfigIconSettings.qml:43
+msgid "Please choose a file"
+msgstr "Kies een bestand"
+
+#: package/contents/ui/ConfigIconSettings.qml:44
+msgid "Icons only (*.svg *.png *.jpg *.jpeg)"
+msgstr "Alleen pictogrammen (*.svg *.png *.jpg *.jpeg)"
+
+#: package/contents/ui/ConfigIconSettings.qml:44
+msgid "All files (*)"
+msgstr "Alle bestanden (*)"
+
+#: package/contents/ui/ConfigIconSettings.qml:70
+msgid "Customize & rearrange icons"
+msgstr "Pictogrammen aanpassen en herschikken"
+
+#: package/contents/ui/ConfigIconSettings.qml:76
+msgctxt "Actions for the available radio buttons"
+msgid "Action:"
+msgstr "Actie:"
+
+#: package/contents/ui/ConfigIconSettings.qml:85
+msgid "Rearrange icons"
+msgstr "Pictogrammen herschikken"
+
+#: package/contents/ui/ConfigIconSettings.qml:93
+msgid "Change icons with system icons (recommended)"
+msgstr "Pictogrammen wijzigen middels systeempictogrammen (aanbevolen)"
+
+#: package/contents/ui/ConfigIconSettings.qml:101
+msgid "Change icons with user-defined icons"
+msgstr "Pictogrammen wijzigen middels eigen pictogrammen"
+
+#: package/contents/ui/ConfigIconSettings.qml:112
+msgid "Move icon to the left"
+msgstr "Pictogram naar links verplaatsen"
+
+#: package/contents/ui/ConfigIconSettings.qml:126
+msgid "Click to select and move icon"
+msgstr "Klik om pictogram te selecteren en verplaatsen"
+
+#: package/contents/ui/ConfigIconSettings.qml:126
+msgid "Click to change icon"
+msgstr "Klik om pictogram te wijzigen"
+
+#: package/contents/ui/ConfigIconSettings.qml:144
+msgid "Move icon to the right"
+msgstr "Pictogram naar rechts verplaatsen"
+
+#: package/contents/ui/ConfigIconSettings.qml:155
+msgid "Reset"
+msgstr "Standaardwaarden"
+
+#: package/contents/ui/ConfigIconSettings.qml:156
+msgid "Reset all current changes to previous values"
+msgstr "Alle huidige aanpassingen terugdraaien"
+
+#: package/contents/ui/main.qml:141
+msgid "Do you want to suspend to disk (hibernate)?"
+msgstr "Wil je pauzeren naar de schijf ('slaapstand')?"
+
+#: package/contents/ui/main.qml:144 package/contents/ui/main.qml:160
+msgid "Yes"
+msgstr "Ja"
+
+#: package/contents/ui/main.qml:145 package/contents/ui/main.qml:161
+msgid "No"
+msgstr "Nee"
+
+#: package/contents/ui/main.qml:157
+msgid "Do you want to suspend to RAM (sleep)?"
+msgstr "Wil je pauzeren naar RAM ('pauzestand')?"
+
+#: translations/rc.cpp:1 rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Heimen Stoffels"
+
+#: translations/rc.cpp:2 rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "vistausss@outlook.com"
+
+#: translations/rc.cpp:3 rc.cpp:3
+msgctxt "HOMEPAGE OF TRANSLATORS"
+msgid "Your homepages"
+msgstr ""

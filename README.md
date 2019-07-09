@@ -23,6 +23,7 @@ Plasma5 applet that displays a panel with a set of system actions
 - Integration with Breeze and Breeze Dark themes
 
 ## Supported languages
+- Dutch
 - English (default)
 - French
 - Spanish

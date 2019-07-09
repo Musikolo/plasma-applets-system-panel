@@ -3,9 +3,11 @@ Encoding=UTF-8
 Name=System panel
 Name[es]=Panel de sistema
 Name[fr]=Panneau système
+Name[nl]=Systeemactiepaneel
 Comment=Plasma5 applet that displays a panel with a set of system actions
 Comment[es]=Plasma5 applet que muestra un panel con acciones de sistema
 Comment[fr]=Applet Plasma5 qui affiche un ensemble d'actions système
+Comment[nl]=Plasma5-widget die een paneel bevat met systeemacties
 
 Icon=system-shutdown
 Type=Service

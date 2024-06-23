@@ -198,7 +198,7 @@ KCM.SimpleKCM {
         selectedIconData = modelData
         fileDialog.folder = (changeUserIconsAction.checked ? StandardPaths.standardLocations(StandardPaths.HomeLocation)[0] :
                                                              "file:///usr/share/icons")
-        fileDialog.open();
+        fileDialog.open()
     }
 
     function selectIcon(toolButton, modelData, index){
@@ -222,15 +222,15 @@ KCM.SimpleKCM {
     function moveIcon(direction){
 
         if(selectedIconData){
-            var currentPosition = Data.store.getOperationPosition(selectedIconData.operation);
+            var currentPosition = Data.store.getOperationPosition(selectedIconData.operation)
             if(currentPosition < iconList.count){
 
                 var newPosition = -1
                 if(direction == "LEFT" && currentPosition > 0){
-                    newPosition = currentPosition - 1;
+                    newPosition = currentPosition - 1
                 }
                 else if(direction == "RIGHT" && currentPosition < iconList.count - 1) {
-                    newPosition = currentPosition + 1;
+                    newPosition = currentPosition + 1
                 }
 
                 if(newPosition > -1){
@@ -261,7 +261,7 @@ KCM.SimpleKCM {
 
     function updateArrows(){
 
-        var currentPosition = Data.store.getOperationPosition(selectedIconData.operation);
+        var currentPosition = Data.store.getOperationPosition(selectedIconData.operation)
         arrowLeft.enabled = (currentPosition > 0)
         arrowRight.enabled = (currentPosition < iconList.count - 1)
     }

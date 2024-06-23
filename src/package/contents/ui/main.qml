@@ -72,7 +72,7 @@ PlasmoidItem {
             var value = Plasmoid.configuration.rows
             if(Plasmoid.configuration.inlineBestFit){
                 if(Plasmoid.formFactor != PlasmaCore.Types.Vertical){
-                    value = 1;
+                    value = 1
                 }
                 else {
                     value = numVisibleButtons
@@ -85,7 +85,7 @@ PlasmoidItem {
             var value = Plasmoid.configuration.columns
             if(Plasmoid.configuration.inlineBestFit){
                 if(Plasmoid.formFactor === PlasmaCore.Types.Vertical){
-                    value = 1;
+                    value = 1
                 }
                 else {
                     value = numVisibleButtons
@@ -144,13 +144,13 @@ PlasmoidItem {
     //     onButtonClicked: function (button, role) {
     //         switch (button) {
     //         case MessageDialog.Yes:
-    //             console.log("Clicked on YES button!");
-    //             performOperation("suspendToDisk");
-    //             break;
+    //             console.log("Clicked on YES button!")
+    //             performOperation("suspendToDisk")
+    //             break
     //         }
     //     }
     // }
-    // property MessageDialog hibernateDialog;
+    // property MessageDialog hibernateDialog
 
     //TODO: See how to implement a confirmation dialog
     // MessageDialog {
@@ -161,13 +161,13 @@ PlasmoidItem {
     //     onButtonClicked: function (button, role) {
     //         switch (button) {
     //         case MessageDialog.Yes:
-    //             console.log("SUSPEND - Clicked on YES button!");
-    //             performOperation("suspendToRam");
-    //             break;
+    //             console.log("SUSPEND - Clicked on YES button!")
+    //             performOperation("suspendToRam")
+    //             break
     //         }
     //     }
     // }
-    // property MessageDialog sleepDialog;
+    // property MessageDialog sleepDialog
 
     //TODO: Clean up
     // Component {
@@ -211,33 +211,33 @@ PlasmoidItem {
         // if (operation === "suspendToDisk" && Plasmoid.configuration.hibernateConfirmation) {
         //     // TODO: Clean up
         //     // if (!hibernateDialog) {
-        //     //     hibernateDialog = hibernateDialogComponent.createObject(itemGrid);
+        //     //     hibernateDialog = hibernateDialogComponent.createObject(itemGrid)
         //     // }
         //     // hibernateDialog.visualParent = button
         //     // hibernateDialog.open()
-        //     hibernateDialogComponent.open();
+        //     hibernateDialogComponent.open()
 
         // } else if (operation === "suspendToRam" && Plasmoid.configuration.sleepConfirmation){
         //     //TODO: Clean up
         //     // if (!sleepDialog) {
-        //     //     sleepDialog = sleepDialogComponent.createObject(itemGrid);
+        //     //     sleepDialog = sleepDialogComponent.createObject(itemGrid)
         //     // }
         //     // sleepDialog.visualParent = button
         //     // sleepDialog.open()
-        //     sleepDialogComponent.open();
+        //     sleepDialogComponent.open()
 
         // } else if (operation === "turnOffScreen") {
         if (operation === "turnOffScreen") {
-            systemPanel.turnOffScreen();
+            systemPanel.turnOffScreen()
             
         } else {
-            performOperation(operation);
+            performOperation(operation)
         }
     }
     
     function performOperation(operation) {
-        console.log("performOperation - operation=", operation);
-        session[operation]();
+        console.log("performOperation - operation=", operation)
+        session[operation]()
 
         if(operation == "lock" && Plasmoid.configuration.lockTurnOffScreen){
             systemPanel.turnOffScreen()

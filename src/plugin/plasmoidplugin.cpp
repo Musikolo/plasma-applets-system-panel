@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2016 Carlos López Sánchez <musikolo{AT}hotmail[DOT]com>
+    Copyright (c) 2024 Carlos López Sánchez <musikolo{AT}hotmail[DOT]com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
 
 void PlasmoidPlugin::registerTypes(const char *uri)
 {
-    Q_ASSERT(uri == QLatin1String("org.kde.private.systempanel"));
+    Q_ASSERT(uri == QLatin1String("org.kde.private.systempanel").data());
     
     qmlRegisterType<SystemPanel>(uri, 1, 0, "SystemPanel");
 }

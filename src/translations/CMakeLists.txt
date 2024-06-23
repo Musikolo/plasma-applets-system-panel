@@ -1,5 +1,5 @@
 FIND_PROGRAM(GETTEXT_MSGFMT_EXECUTABLE msgfmt)
- 
+
 IF(NOT GETTEXT_MSGFMT_EXECUTABLE)
         MESSAGE(
 "------
@@ -25,7 +25,14 @@ ELSE(NOT GETTEXT_MSGFMT_EXECUTABLE)
                         ADD_CUSTOM_COMMAND(TARGET translations
                                 COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} --check -o ${_gmoFile} ${_poFile}
                                 DEPENDS ${_poFile})
-                        INSTALL(FILES ${_gmoFile} DESTINATION ${LOCALE_INSTALL_DIR}/${_langCode}/LC_MESSAGES/ RENAME ${catalogname}.mo)
+                        #TODO: Find a better locale variable
+                        # message(STATUS "Install directory LOCALE_INSTALL_DIR=${LOCALE_INSTALL_DIR}")
+                        # INSTALL(FILES ${_gmoFile} DESTINATION ${LOCALE_INSTALL_DIR}/${_langCode}/LC_MESSAGES/ RENAME ${catalogname}.mo)
+                        # message(STATUS "Install directory DATAROOTDIR=${DATAROOTDIR}")
+                        # message(STATUS "Install directory LOCALEDIR=${LOCALEDIR}")
+                        # INSTALL(FILES ${_gmoFile} DESTINATION ${LOCALEDIR}/${_langCode}/LC_MESSAGES/ RENAME ${catalogname}.mo)
+                        message(STATUS "Install Locale ${CMAKE_INSTALL_PREFIX}/share/locale/${_langCode}")
+                        INSTALL(FILES ${_gmoFile} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/locale/${_langCode}/LC_MESSAGES/ RENAME ${catalogname}.mo)
                 ENDIF( _langCode )
  
         ENDFOREACH(_poFile ${PO_FILES})

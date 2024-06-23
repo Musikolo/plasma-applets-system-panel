@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2016 Carlos López Sánchez <musikolo{AT}hotmail[DOT]com>
+    Copyright (c) 2024 Carlos López Sánchez <musikolo{AT}hotmail[DOT]com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -14,19 +14,22 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-import QtQuick 2.1
-import QtQuick.Layouts 1.11
-import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0
-import "data.js" as Data
+import QtQuick
+import QtQuick.Dialogs
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.plasmoid
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.components
+import org.kde.plasma.private.sessions
+import "../code/data.js" as Data
 
-Item {
+PlasmoidItem {
     id: root
 
-    readonly property int minButtonSize: units.iconSizes.small
-    readonly property int medButtonSize: units.iconSizes.medium
-    readonly property int maxButtonSize: units.iconSizes.large
+    readonly property int minButtonSize: Kirigami.Units.iconSizes.small
+    readonly property int medButtonSize: Kirigami.Units.iconSizes.medium
+    readonly property int maxButtonSize: Kirigami.Units.iconSizes.large
 
     Layout.minimumWidth: minButtonSize * itemGrid.columns
     Layout.minimumHeight: minButtonSize * itemGrid.rows
@@ -36,7 +39,7 @@ Item {
     
     readonly property int iconSize: {
         var value = 0
-        if(plasmoid.formFactor != PlasmaCore.Types.Vertical){
+        if(Plasmoid.formFactor != PlasmaCore.Types.Vertical){
             value = height / itemGrid.rows
         }
         else {
@@ -53,13 +56,12 @@ Item {
     Layout.preferredWidth: (iconSize * itemGrid.columns)
     Layout.preferredHeight: (iconSize * itemGrid.rows)
 
-    Plasmoid.preferredRepresentation: Plasmoid.fullRepresentation
-    
-    PlasmaCore.DataSource {
-        id: dataEngine
-        engine: "powermanagement"
-        connectedSources: ["Sleep States","PowerDevil"]
+    preferredRepresentation: fullRepresentation
+
+    SessionManagement {
+        id: session
     }
+
     
     Grid {
         id: itemGrid
@@ -67,9 +69,9 @@ Item {
         readonly property int numVisibleButtons: (visibleChildren.length - 1)
         
         rows: {
-            var value = plasmoid.configuration.rows
-            if(plasmoid.configuration.inlineBestFit){
-                if(plasmoid.formFactor != PlasmaCore.Types.Vertical){
+            var value = Plasmoid.configuration.rows
+            if(Plasmoid.configuration.inlineBestFit){
+                if(Plasmoid.formFactor != PlasmaCore.Types.Vertical){
                     value = 1;
                 }
                 else {
@@ -80,9 +82,9 @@ Item {
             return value
         }
         columns: {
-            var value = plasmoid.configuration.columns
-            if(plasmoid.configuration.inlineBestFit){
-                if(plasmoid.formFactor === PlasmaCore.Types.Vertical){
+            var value = Plasmoid.configuration.columns
+            if(Plasmoid.configuration.inlineBestFit){
+                if(Plasmoid.formFactor === PlasmaCore.Types.Vertical){
                     value = 1;
                 }
                 else {
@@ -103,10 +105,10 @@ Item {
             property int iconSize: Math.min(itemWidth, itemHeight)
             model: Data.store.getConfigData()
             
-            PlasmaCore.IconItem {
+            Kirigami.Icon {
                 id: iconButton
-                visible: { 
-                    var value = plasmoid.configuration["show_" + modelData.operation] && (!modelData.hasOwnProperty("requires") || dataEngine.data["Sleep States"][modelData.requires])
+                visible: {
+                    var value = Plasmoid.configuration["show_" + modelData.configKey] && (!modelData.hasOwnProperty("requires") || session[modelData.requires])
                     console.log(modelData.operation,"visible=", value)
                     
                     return value
@@ -133,79 +135,108 @@ Item {
         }
     }
     
-    Component {
-        id: hibernateDialogComponent
-        QueryDialog {
-            titleIcon: "system-suspend-hibernate"
-            titleText: i18n("Hibernate")
-            message: i18n("Do you want to suspend to disk (hibernate)?")
-            location: plasmoid.location
+    //TODO: See how to implement a confirmation dialog
+    // MessageDialog {
+    //     id: hibernateDialogComponent
+    //     text: qsTr("The document has been modified.")
+    //     informativeText: qsTr("Do you want to save your changes?")
+    //     buttons: MessageDialog.Yes | MessageDialog.No
+    //     onButtonClicked: function (button, role) {
+    //         switch (button) {
+    //         case MessageDialog.Yes:
+    //             console.log("Clicked on YES button!");
+    //             performOperation("suspendToDisk");
+    //             break;
+    //         }
+    //     }
+    // }
+    // property MessageDialog hibernateDialog;
 
-            acceptButtonText: i18n("Yes")
-            rejectButtonText: i18n("No")
+    //TODO: See how to implement a confirmation dialog
+    // MessageDialog {
+    //     id: sleepDialogComponent
+    //     text: i18n("Suspend")
+    //     informativeText: i18n("Do you want to suspend to RAM (sleep)?")
+    //     buttons: MessageDialog.Yes | MessageDialog.No
+    //     onButtonClicked: function (button, role) {
+    //         switch (button) {
+    //         case MessageDialog.Yes:
+    //             console.log("SUSPEND - Clicked on YES button!");
+    //             performOperation("suspendToRam");
+    //             break;
+    //         }
+    //     }
+    // }
+    // property MessageDialog sleepDialog;
 
-            onAccepted: performOperation("suspendToDisk")
-        }
-    }
-    property QueryDialog hibernateDialog
+    //TODO: Clean up
+    // Component {
+    //     id: hibernateDialogComponent
+    //     QueryDialog {
+    //         titleIcon: "system-suspend-hibernate"
+    //         titleText: i18n("Hibernate")
+    //         message: i18n("Do you want to suspend to disk (hibernate)?")
+    //         location: Plasmoid.location
 
-    Component {
-        id: sleepDialogComponent
-        QueryDialog {
-            titleIcon: "system-suspend"
-            titleText: i18n("Suspend")
-            message: i18n("Do you want to suspend to RAM (sleep)?")
-            location: plasmoid.location
+    //         acceptButtonText: i18n("Yes")
+    //         rejectButtonText: i18n("No")
 
-            acceptButtonText: i18n("Yes")
-            rejectButtonText: i18n("No")
+    //         onAccepted: performOperation("suspendToDisk")
+    //     }
+    // }
+    // property QueryDialog hibernateDialog
 
-            onAccepted: performOperation("suspendToRam")
-        }
-    }
-    property QueryDialog sleepDialog
+    // Component {
+    //     id: sleepDialogComponent
+    //     QueryDialog {
+    //         titleIcon: "system-suspend"
+    //         titleText: i18n("Suspend")
+    //         message: i18n("Do you want to suspend to RAM (sleep)?")
+    //         location: Plasmoid.location
+
+    //         acceptButtonText: i18n("Yes")
+    //         rejectButtonText: i18n("No")
+
+    //         onAccepted: performOperation("suspendToRam")
+    //     }
+    // }
+    // property QueryDialog sleepDialog
 
     SystemPanel {
         id: systemPanel
     }
     
-    function clickHandler(what, button) {
-        if (what == "suspendToDisk" && plasmoid.configuration.hibernateConfirmation) {
-            if (!hibernateDialog) {
-                hibernateDialog = hibernateDialogComponent.createObject(itemGrid);
-            }
-            hibernateDialog.visualParent = button
-            hibernateDialog.open()
+    function clickHandler(operation, button) {
+        //TODO: See how to implement a confirmation dialog
+        // if (operation === "suspendToDisk" && Plasmoid.configuration.hibernateConfirmation) {
+        //     // TODO: Clean up
+        //     // if (!hibernateDialog) {
+        //     //     hibernateDialog = hibernateDialogComponent.createObject(itemGrid);
+        //     // }
+        //     // hibernateDialog.visualParent = button
+        //     // hibernateDialog.open()
+        //     hibernateDialogComponent.open();
 
-        } else if (what == "suspendToRam" && plasmoid.configuration.sleepConfirmation){
-            if (!sleepDialog) {
-                sleepDialog = sleepDialogComponent.createObject(itemGrid);
-            }
-            sleepDialog.visualParent = button
-            sleepDialog.open()
+        // } else if (operation === "suspendToRam" && Plasmoid.configuration.sleepConfirmation){
+        //     //TODO: Clean up
+        //     // if (!sleepDialog) {
+        //     //     sleepDialog = sleepDialogComponent.createObject(itemGrid);
+        //     // }
+        //     // sleepDialog.visualParent = button
+        //     // sleepDialog.open()
+        //     sleepDialogComponent.open();
 
-        } else if (what == "turnOffScreen") {
+        // } else if (operation === "turnOffScreen") {
+        if (operation === "turnOffScreen") {
             systemPanel.turnOffScreen();
             
         } else {
-            performOperation(what)
+            performOperation(operation);
         }
     }
     
-    function performOperation(what) {
-                    
-        var service = dataEngine.serviceForSource("PowerDevil");
-        var operation = service.operationDescription(what);
-        var serviceJob = service.startOperationCall(operation);
-        serviceJob.finished.connect(result);
-    }
-
-    function result(job) {
-
-        console.log("ServiceJob result=",  job.result, "operationName=", job.operationName);
-
-        if(job.operationName == "lockScreen" && plasmoid.configuration.lockTurnOffScreen){
-            systemPanel.turnOffScreen()
-        }
+    function performOperation(operation) {
+        console.log("performOperation - operation=", operation);
+        session[operation]();
     }
 }

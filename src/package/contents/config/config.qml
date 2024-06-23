@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2016 Carlos López Sánchez <musikolo{AT}hotmail[DOT]com>
+    Copyright (c) 2024 Carlos López Sánchez <musikolo{AT}hotmail[DOT]com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,19 +15,19 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
+import QtQuick
 
-import org.kde.plasma.configuration 2.0
+import org.kde.plasma.configuration
 
 ConfigModel {
     ConfigCategory {
          name: i18n("General")
          icon: "system-shutdown"
-         source: "ConfigGeneral.qml"
+         source: "configGeneral.qml"
     }
     ConfigCategory {
          name: i18nc("Icon and location of the icon of each action", "Icon settings")
          icon: "preferences-desktop-color"
-         source: "ConfigIconSettings.qml"
+         source: "configIconSettings.qml"
     }
 }

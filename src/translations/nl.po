@@ -8,65 +8,83 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://kde-look.org/content/show.php/plasma5-applets-"
 "system-panel?content=175309\n"
-"POT-Creation-Date: 2016-04-13 22:58-0500\n"
+"POT-Creation-Date: 2024-06-23 00:21-0500\n"
 "PO-Revision-Date: 2019-07-08 12:09+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: Dutch <vistausss@outlook.com>\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.3\n"
-"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: nl_NL\n"
 
-#: package/contents/code/data.js:7
+#: package/contents/code/data.js:8
 msgid "Standby"
 msgstr "Standby"
 
-#: package/contents/code/data.js:8
+#: package/contents/code/data.js:9
 msgid "Turn off the monitor to save energy"
 msgstr "Schakel het scherm uit om stroom te besparen"
 
-#: package/contents/code/data.js:12 package/contents/ui/ConfigGeneral.qml:99
+#: package/contents/code/data.js:15 package/contents/ui/configGeneral.qml:125
 msgid "Lock"
 msgstr "Vergrendelen"
 
-#: package/contents/code/data.js:13
+#: package/contents/code/data.js:16
 msgid "Lock the screen"
 msgstr "Vergrendel het scherm"
 
-#: package/contents/code/data.js:18 package/contents/ui/ConfigGeneral.qml:118
+#: package/contents/code/data.js:23 package/contents/ui/configGeneral.qml:144
 msgid "Switch user"
 msgstr "Andere gebruiker"
 
-#: package/contents/code/data.js:19
+#: package/contents/code/data.js:24
 msgid "Start a parallel session as a different user"
 msgstr "Start een tweede sessie als andere gebruiker"
 
-#: package/contents/code/data.js:23
-msgid "Leave..."
-msgstr "Verlaten..."
+#: package/contents/code/data.js:31 package/contents/ui/configGeneral.qml:89
+msgid "Shut Down"
+msgstr ""
 
-#: package/contents/code/data.js:24
-msgid "Log out, turn off or restart the computer"
+#: package/contents/code/data.js:32
+#, fuzzy
+msgid "Turn off the computer"
 msgstr "Afmelden, uitschakelen of opnieuw opstarten"
 
-#: package/contents/code/data.js:28 package/contents/ui/ConfigGeneral.qml:149
-#: package/contents/ui/main.qml:156
-msgid "Suspend"
-msgstr "Pauzestand"
+#: package/contents/code/data.js:39 package/contents/ui/configGeneral.qml:101
+msgid "Restart"
+msgstr ""
 
-#: package/contents/code/data.js:29
-msgid "Sleep (suspend to RAM)"
+#: package/contents/code/data.js:40
+msgid "Reboot the computer"
+msgstr ""
+
+#: package/contents/code/data.js:47 package/contents/ui/configGeneral.qml:113
+msgid "Log Out"
+msgstr ""
+
+#: package/contents/code/data.js:48
+#, fuzzy
+msgid "Log out the computer"
+msgstr "Afmelden, uitschakelen of opnieuw opstarten"
+
+#: package/contents/code/data.js:55 package/contents/ui/configGeneral.qml:176
+msgid "Sleep"
+msgstr ""
+
+#: package/contents/code/data.js:56
+#, fuzzy
+msgid "Suspend to RAM"
 msgstr "Pauzeren (pauzeren naar RAM)"
 
-#: package/contents/code/data.js:34 package/contents/ui/ConfigGeneral.qml:130
-#: package/contents/ui/main.qml:140
+#: package/contents/code/data.js:63 package/contents/ui/configGeneral.qml:156
 msgid "Hibernate"
 msgstr "Slaapstand"
 
-#: package/contents/code/data.js:35
-msgid "Hibernate (suspend to disk)"
+#: package/contents/code/data.js:64
+#, fuzzy
+msgid "Suspend to disk"
 msgstr "Slaapstand (pauzeren naar schijf)"
 
 #: package/contents/config/config.qml:24
@@ -78,126 +96,104 @@ msgctxt "Icon and location of the icon of each action"
 msgid "Icon settings"
 msgstr "Pictograminstellingen"
 
-#: package/contents/ui/ConfigGeneral.qml:64
+#: package/contents/ui/configGeneral.qml:65
 msgctxt "Heading for list of actions (leave, lock, shutdown, ...)"
 msgid "Actions"
 msgstr "Acties"
 
-#: package/contents/ui/ConfigGeneral.qml:75
-msgid "Turn off screen"
+#: package/contents/ui/configGeneral.qml:77
+#, fuzzy
+msgid "Turn Off Screen"
 msgstr "Scherm uitschakelen"
 
-#: package/contents/ui/ConfigGeneral.qml:81
-#: package/contents/ui/ConfigGeneral.qml:93
-#: package/contents/ui/ConfigGeneral.qml:105
-#: package/contents/ui/ConfigGeneral.qml:124
-#: package/contents/ui/ConfigGeneral.qml:136
-#: package/contents/ui/ConfigGeneral.qml:155
+#: package/contents/ui/configGeneral.qml:83
+#: package/contents/ui/configGeneral.qml:95
+#: package/contents/ui/configGeneral.qml:107
+#: package/contents/ui/configGeneral.qml:119
+#: package/contents/ui/configGeneral.qml:131
+#: package/contents/ui/configGeneral.qml:150
+#: package/contents/ui/configGeneral.qml:162
+#: package/contents/ui/configGeneral.qml:182
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: package/contents/ui/ConfigGeneral.qml:87
-msgid "Leave"
-msgstr "Verlaten"
-
-#: package/contents/ui/ConfigGeneral.qml:112
+#: package/contents/ui/configGeneral.qml:138
 msgid "Turn off screen when locking"
 msgstr "Scherm uitschakelen na vergrendelen"
 
-#: package/contents/ui/ConfigGeneral.qml:143
-#: package/contents/ui/ConfigGeneral.qml:162
-msgid "Ask for confirmation"
-msgstr "Vragen om bevestiging"
-
-#: package/contents/ui/ConfigGeneral.qml:169
+#: package/contents/ui/configGeneral.qml:197
 msgctxt "Number of rows, columns..."
 msgid "Layout"
 msgstr "Indeling"
 
-#: package/contents/ui/ConfigGeneral.qml:176
+#: package/contents/ui/configGeneral.qml:204
 msgid "Inline best fit"
 msgstr "Best passend"
 
-#: package/contents/ui/ConfigGeneral.qml:191
+#: package/contents/ui/configGeneral.qml:227
 msgid "rows"
 msgstr "rijen"
 
-#: package/contents/ui/ConfigGeneral.qml:206
+#: package/contents/ui/configGeneral.qml:250
 msgid "columns"
 msgstr "kolommen"
 
-#: package/contents/ui/ConfigIconSettings.qml:43
+#: package/contents/ui/configIconSettings.qml:43
 msgid "Please choose a file"
 msgstr "Kies een bestand"
 
-#: package/contents/ui/ConfigIconSettings.qml:44
+#: package/contents/ui/configIconSettings.qml:44
 msgid "Icons only (*.svg *.png *.jpg *.jpeg)"
 msgstr "Alleen pictogrammen (*.svg *.png *.jpg *.jpeg)"
 
-#: package/contents/ui/ConfigIconSettings.qml:44
+#: package/contents/ui/configIconSettings.qml:44
 msgid "All files (*)"
 msgstr "Alle bestanden (*)"
 
-#: package/contents/ui/ConfigIconSettings.qml:70
+#: package/contents/ui/configIconSettings.qml:72
 msgid "Customize & rearrange icons"
 msgstr "Pictogrammen aanpassen en herschikken"
 
-#: package/contents/ui/ConfigIconSettings.qml:76
+#: package/contents/ui/configIconSettings.qml:78
 msgctxt "Actions for the available radio buttons"
 msgid "Action:"
 msgstr "Actie:"
 
-#: package/contents/ui/ConfigIconSettings.qml:85
+#: package/contents/ui/configIconSettings.qml:87
 msgid "Rearrange icons"
 msgstr "Pictogrammen herschikken"
 
-#: package/contents/ui/ConfigIconSettings.qml:93
+#: package/contents/ui/configIconSettings.qml:95
 msgid "Change icons with system icons (recommended)"
 msgstr "Pictogrammen wijzigen middels systeempictogrammen (aanbevolen)"
 
-#: package/contents/ui/ConfigIconSettings.qml:101
+#: package/contents/ui/configIconSettings.qml:103
 msgid "Change icons with user-defined icons"
 msgstr "Pictogrammen wijzigen middels eigen pictogrammen"
 
-#: package/contents/ui/ConfigIconSettings.qml:112
+#: package/contents/ui/configIconSettings.qml:115
 msgid "Move icon to the left"
 msgstr "Pictogram naar links verplaatsen"
 
-#: package/contents/ui/ConfigIconSettings.qml:126
+#: package/contents/ui/configIconSettings.qml:130
 msgid "Click to select and move icon"
 msgstr "Klik om pictogram te selecteren en verplaatsen"
 
-#: package/contents/ui/ConfigIconSettings.qml:126
+#: package/contents/ui/configIconSettings.qml:130
 msgid "Click to change icon"
 msgstr "Klik om pictogram te wijzigen"
 
-#: package/contents/ui/ConfigIconSettings.qml:144
+#: package/contents/ui/configIconSettings.qml:149
 msgid "Move icon to the right"
 msgstr "Pictogram naar rechts verplaatsen"
 
-#: package/contents/ui/ConfigIconSettings.qml:155
-msgid "Reset"
-msgstr "Standaardwaarden"
-
-#: package/contents/ui/ConfigIconSettings.qml:156
+#: package/contents/ui/configIconSettings.qml:161
 msgid "Reset all current changes to previous values"
 msgstr "Alle huidige aanpassingen terugdraaien"
 
-#: package/contents/ui/main.qml:141
-msgid "Do you want to suspend to disk (hibernate)?"
-msgstr "Wil je pauzeren naar de schijf ('slaapstand')?"
-
-#: package/contents/ui/main.qml:144 package/contents/ui/main.qml:160
-msgid "Yes"
-msgstr "Ja"
-
-#: package/contents/ui/main.qml:145 package/contents/ui/main.qml:161
-msgid "No"
-msgstr "Nee"
-
-#: package/contents/ui/main.qml:157
-msgid "Do you want to suspend to RAM (sleep)?"
-msgstr "Wil je pauzeren naar RAM ('pauzestand')?"
+#: package/contents/ui/configIconSettings.qml:162
+msgid "Reset"
+msgstr "Standaardwaarden"
 
 #: translations/rc.cpp:1 rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
@@ -213,3 +209,27 @@ msgstr "vistausss@outlook.com"
 msgctxt "HOMEPAGE OF TRANSLATORS"
 msgid "Your homepages"
 msgstr ""
+
+#~ msgid "Leave..."
+#~ msgstr "Verlaten..."
+
+#~ msgid "Suspend"
+#~ msgstr "Pauzestand"
+
+#~ msgid "Leave"
+#~ msgstr "Verlaten"
+
+#~ msgid "Ask for confirmation"
+#~ msgstr "Vragen om bevestiging"
+
+#~ msgid "Do you want to suspend to disk (hibernate)?"
+#~ msgstr "Wil je pauzeren naar de schijf ('slaapstand')?"
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgid "No"
+#~ msgstr "Nee"
+
+#~ msgid "Do you want to suspend to RAM (sleep)?"
+#~ msgstr "Wil je pauzeren naar RAM ('pauzestand')?"

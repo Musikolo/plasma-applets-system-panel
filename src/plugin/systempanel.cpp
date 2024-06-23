@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2016 Carlos López Sánchez <musikolo{AT}hotmail[DOT]com>
+    Copyright (c) 2024 Carlos López Sánchez <musikolo{AT}hotmail[DOT]com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,7 +25,11 @@ SystemPanel::~SystemPanel() {
 
 int SystemPanel::turnOffScreen(){
     
-    const int result = system("/usr/bin/xset dpms force off");
+    //TODO: For wayland we need sleep 0.5 && qdbus org.kde.kglobalaccel /component/org_kde_powerdevil invokeShortcut "Turn Off Screen"
+    //TODO: We can also use kscreen-doctor --dpms off or implment integration with libkscreen
+    // const int result = system("/usr/bin/xset dpms force off");
+    const int result = system("/usr/bin/kscreen-doctor --dpms off");
+    // const int result = system("qdbus org.kde.kglobalaccel /component/org_kde_powerdevil invokeShortcut \"Turn Off Screen\"");
     
     return result;
 }

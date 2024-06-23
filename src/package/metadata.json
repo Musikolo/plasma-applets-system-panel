@@ -1,0 +1,32 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "<musikolo{AT}hotmail[DOT]com>",
+                "Name": "Carlos López Sánchez"
+            }
+        ],
+        "Category": "Utilities",
+        "Description": "Plasma6 applet that displays a panel with a set of system actions",
+        "Description[es]": "Plasma6 applet que muestra un panel con acciones de sistema",
+        "Description[fr]": "Applet Plasma6 qui affiche un ensemble d'actions système",
+        "Description[nl]": "Plasma6-widget die een paneel bevat met systeemacties",
+        "EnabledByDefault": true,
+        "Icon": "system-shutdown",
+        "Id": "org.kde.plasma.systempanel",
+        "License": "GPL3",
+        "Name": "System panel",
+        "Name[es]": "Panel de sistema",
+        "Name[fr]": "Panneau système",
+        "Name[nl]": "Systeemactiepaneel",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "2.0",
+        "Website": "https://github.com/Musikolo"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Requires-FileDialog": "Unused",
+    "X-Plasma-Requires-LaunchApp": "Unused",
+    "X-Plasma-StandAloneApp": true
+}

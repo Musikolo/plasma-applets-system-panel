@@ -1,14 +1,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Carlos López Sánchez <musikolo@hotmail.com>, 2016.
+# SPDX-FileCopyrightText: 2016, 2024 Carlos López Sánchez <musikolo@hotmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://kde-look.org/content/show.php/plasma5-applets-sys"
 "tem-panel?content=175309\n"
-"POT-Creation-Date: 2016-04-13 22:58-0500\n"
-"PO-Revision-Date: 2016-04-13 23:15-0600\n"
+"POT-Creation-Date: 2024-06-23 00:21-0500\n"
+"PO-Revision-Date: 2024-06-23 00:27-0500\n"
 "Last-Translator: Carlos López Sánchez <musikolo@hotmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
 "Language: en_US\n"
@@ -16,57 +16,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 
-#: package/contents/code/data.js:7
+#: package/contents/code/data.js:8
 msgid "Standby"
 msgstr "Reposo "
 
-#: package/contents/code/data.js:8
+#: package/contents/code/data.js:9
 msgid "Turn off the monitor to save energy"
 msgstr "Apagar el monitor para ahorrar energía"
 
-#: package/contents/code/data.js:12 package/contents/ui/ConfigGeneral.qml:99
+#: package/contents/code/data.js:15 package/contents/ui/configGeneral.qml:125
 msgid "Lock"
 msgstr "Bloquear"
 
-#: package/contents/code/data.js:13
+#: package/contents/code/data.js:16
 msgid "Lock the screen"
 msgstr "Bloquear la pantalla"
 
-#: package/contents/code/data.js:18 package/contents/ui/ConfigGeneral.qml:118
+#: package/contents/code/data.js:23 package/contents/ui/configGeneral.qml:144
 msgid "Switch user"
 msgstr "Cambiar de usuario"
 
-#: package/contents/code/data.js:19
+#: package/contents/code/data.js:24
 msgid "Start a parallel session as a different user"
 msgstr "Iniciar sesión en paralelo con un usuario diferente"
 
-#: package/contents/code/data.js:23
-msgid "Leave..."
-msgstr "Salir..."
+#: package/contents/code/data.js:31 package/contents/ui/configGeneral.qml:89
+msgid "Shut Down"
+msgstr "Apagar"
 
-#: package/contents/code/data.js:24
-msgid "Log out, turn off or restart the computer"
-msgstr "Cerrar sesión, apagar o reiniciar el equipo"
+#: package/contents/code/data.js:32
+msgid "Turn off the computer"
+msgstr "Apagar el equipo"
 
-#: package/contents/code/data.js:28 package/contents/ui/ConfigGeneral.qml:149
-#: package/contents/ui/main.qml:156
-msgid "Suspend"
-msgstr "Suspender"
+#: package/contents/code/data.js:39 package/contents/ui/configGeneral.qml:101
+msgid "Restart"
+msgstr "Reiniciar"
 
-#: package/contents/code/data.js:29
-msgid "Sleep (suspend to RAM)"
+#: package/contents/code/data.js:40
+msgid "Reboot the computer"
+msgstr "Reiniciar el equipo"
+
+#: package/contents/code/data.js:47 package/contents/ui/configGeneral.qml:113
+msgid "Log Out"
+msgstr "Salir"
+
+#: package/contents/code/data.js:48
+msgid "Log out the computer"
+msgstr "Cerrar sesión del equipo"
+
+#: package/contents/code/data.js:55 package/contents/ui/configGeneral.qml:176
+msgid "Sleep"
+msgstr "Dormir"
+
+#: package/contents/code/data.js:56
+msgid "Suspend to RAM"
 msgstr "Suspender en memoria"
 
-#: package/contents/code/data.js:34 package/contents/ui/ConfigGeneral.qml:130
-#: package/contents/ui/main.qml:140
+#: package/contents/code/data.js:63 package/contents/ui/configGeneral.qml:156
 msgid "Hibernate"
 msgstr "Hibernar"
 
-#: package/contents/code/data.js:35
-msgid "Hibernate (suspend to disk)"
-msgstr "Hibernar (suspender en disco)"
+#: package/contents/code/data.js:64
+msgid "Suspend to disk"
+msgstr "Suspender en disco"
 
 #: package/contents/config/config.qml:24
 msgid "General"
@@ -77,126 +91,103 @@ msgctxt "Icon and location of the icon of each action"
 msgid "Icon settings"
 msgstr "Configurar iconos"
 
-#: package/contents/ui/ConfigGeneral.qml:64
+#: package/contents/ui/configGeneral.qml:65
 msgctxt "Heading for list of actions (leave, lock, shutdown, ...)"
 msgid "Actions"
 msgstr "Acciones"
 
-#: package/contents/ui/ConfigGeneral.qml:75
-msgid "Turn off screen"
+#: package/contents/ui/configGeneral.qml:77
+msgid "Turn Off Screen"
 msgstr "Apagar la pantalla"
 
-#: package/contents/ui/ConfigGeneral.qml:81
-#: package/contents/ui/ConfigGeneral.qml:93
-#: package/contents/ui/ConfigGeneral.qml:105
-#: package/contents/ui/ConfigGeneral.qml:124
-#: package/contents/ui/ConfigGeneral.qml:136
-#: package/contents/ui/ConfigGeneral.qml:155
+#: package/contents/ui/configGeneral.qml:83
+#: package/contents/ui/configGeneral.qml:95
+#: package/contents/ui/configGeneral.qml:107
+#: package/contents/ui/configGeneral.qml:119
+#: package/contents/ui/configGeneral.qml:131
+#: package/contents/ui/configGeneral.qml:150
+#: package/contents/ui/configGeneral.qml:162
+#: package/contents/ui/configGeneral.qml:182
 msgid "Enabled"
 msgstr "Habilitar"
 
-#: package/contents/ui/ConfigGeneral.qml:87
-msgid "Leave"
-msgstr "Salir"
-
-#: package/contents/ui/ConfigGeneral.qml:112
+#: package/contents/ui/configGeneral.qml:138
 msgid "Turn off screen when locking"
 msgstr "Apagar la pantalla"
 
-#: package/contents/ui/ConfigGeneral.qml:143
-#: package/contents/ui/ConfigGeneral.qml:162
-msgid "Ask for confirmation"
-msgstr "Solicitar confirmación"
-
-#: package/contents/ui/ConfigGeneral.qml:169
+#: package/contents/ui/configGeneral.qml:197
 msgctxt "Number of rows, columns..."
 msgid "Layout"
 msgstr "Disposición"
 
-#: package/contents/ui/ConfigGeneral.qml:176
+#: package/contents/ui/configGeneral.qml:204
 msgid "Inline best fit"
 msgstr "Mejor ajuste en línea"
 
-#: package/contents/ui/ConfigGeneral.qml:191
+#: package/contents/ui/configGeneral.qml:227
 msgid "rows"
 msgstr "filas"
 
-#: package/contents/ui/ConfigGeneral.qml:206
+#: package/contents/ui/configGeneral.qml:250
 msgid "columns"
 msgstr "columnas"
 
-#: package/contents/ui/ConfigIconSettings.qml:43
+#: package/contents/ui/configIconSettings.qml:43
 msgid "Please choose a file"
 msgstr "Por favor, seleccione un fichero"
 
-#: package/contents/ui/ConfigIconSettings.qml:44
+#: package/contents/ui/configIconSettings.qml:44
 msgid "Icons only (*.svg *.png *.jpg *.jpeg)"
 msgstr "Sólo iconos (*.svg *.png *.jpg *.jpeg)"
 
-#: package/contents/ui/ConfigIconSettings.qml:44
+#: package/contents/ui/configIconSettings.qml:44
 msgid "All files (*)"
 msgstr "Todos los ficheros (*)"
 
-#: package/contents/ui/ConfigIconSettings.qml:70
+#: package/contents/ui/configIconSettings.qml:72
 msgid "Customize & rearrange icons"
 msgstr "Personalizar y reubicar iconos"
 
-#: package/contents/ui/ConfigIconSettings.qml:76
+#: package/contents/ui/configIconSettings.qml:78
 msgctxt "Actions for the available radio buttons"
 msgid "Action:"
 msgstr "Acciones:"
 
-#: package/contents/ui/ConfigIconSettings.qml:85
+#: package/contents/ui/configIconSettings.qml:87
 msgid "Rearrange icons"
 msgstr "Reubicar iconos"
 
-#: package/contents/ui/ConfigIconSettings.qml:93
+#: package/contents/ui/configIconSettings.qml:95
 msgid "Change icons with system icons (recommended)"
 msgstr "Cambiar los iconos con iconos de sistema (recomendado)"
 
-#: package/contents/ui/ConfigIconSettings.qml:101
+#: package/contents/ui/configIconSettings.qml:103
 msgid "Change icons with user-defined icons"
 msgstr "Cambiar los iconos con iconos de usuario"
 
-#: package/contents/ui/ConfigIconSettings.qml:112
+#: package/contents/ui/configIconSettings.qml:115
 msgid "Move icon to the left"
 msgstr "Mover icono a la izquierda"
 
-#: package/contents/ui/ConfigIconSettings.qml:126
+#: package/contents/ui/configIconSettings.qml:130
 msgid "Click to select and move icon"
 msgstr "Haga clic para seleccionar y mover un icono"
 
-#: package/contents/ui/ConfigIconSettings.qml:126
+#: package/contents/ui/configIconSettings.qml:130
 msgid "Click to change icon"
 msgstr "Haga clic para cambiar un icono"
 
-#: package/contents/ui/ConfigIconSettings.qml:144
+#: package/contents/ui/configIconSettings.qml:149
 msgid "Move icon to the right"
 msgstr "Mover icono a la derecha"
 
-#: package/contents/ui/ConfigIconSettings.qml:155
-msgid "Reset"
-msgstr "Restablecer"
-
-#: package/contents/ui/ConfigIconSettings.qml:156
+#: package/contents/ui/configIconSettings.qml:161
 msgid "Reset all current changes to previous values"
 msgstr "Restablecer todos los cambios actuales por los valores predeterminados"
 
-#: package/contents/ui/main.qml:141
-msgid "Do you want to suspend to disk (hibernate)?"
-msgstr "¿Quiere hibernar el equipo (suspender en disco)?"
-
-#: package/contents/ui/main.qml:144 package/contents/ui/main.qml:160
-msgid "Yes"
-msgstr "Sí"
-
-#: package/contents/ui/main.qml:145 package/contents/ui/main.qml:161
-msgid "No"
-msgstr "No"
-
-#: package/contents/ui/main.qml:157
-msgid "Do you want to suspend to RAM (sleep)?"
-msgstr "¿Quiere suspender el equipo en memoria?"
+#: package/contents/ui/configIconSettings.qml:162
+msgid "Reset"
+msgstr "Restablecer"
 
 #: translations/rc.cpp:1 rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
@@ -213,5 +204,30 @@ msgctxt "HOMEPAGE OF TRANSLATORS"
 msgid "Your homepages"
 msgstr "https://github.com/Musikolo"
 
+#~ msgid "Leave..."
+#~ msgstr "Salir..."
+
+#~ msgid "Suspend"
+#~ msgstr "Suspender"
+
+#~ msgid "Leave"
+#~ msgstr "Salir"
+
+#~ msgid "Ask for confirmation"
+#~ msgstr "Solicitar confirmación"
+
+#~ msgid "Do you want to suspend to disk (hibernate)?"
+#~ msgstr "¿Quiere hibernar el equipo (suspender en disco)?"
+
+#~ msgid "Yes"
+#~ msgstr "Sí"
+
+#~ msgid "No"
+#~ msgstr "No"
+
+#~ msgid "Do you want to suspend to RAM (sleep)?"
+#~ msgstr "¿Quiere suspender el equipo en memoria?"
+
 #~ msgid "Switch User"
 #~ msgstr "Cambiar usuario"
+

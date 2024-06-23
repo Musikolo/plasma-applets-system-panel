@@ -32,6 +32,8 @@ Applet for KDE Plasma 6 that displays a panel with a set of system actions.
 - French.
 - Spanish.
 
+If you want to support a new language, please follow [these simple steps](./src/translations/TRANSLATORS.REAME.md).
+
 ## Testing source code locally
 You can test this code locally by issuing the following command:
 ```

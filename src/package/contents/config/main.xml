@@ -12,6 +12,12 @@
     <entry name="show_requestShutDown" type="Bool">
       <default>true</default>
     </entry>
+    <entry name="show_requestRestart" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="show_requestLogOut" type="Bool">
+      <default>true</default>
+    </entry>
     <entry name="show_lockScreen" type="Bool">
       <default>true</default>
     </entry>

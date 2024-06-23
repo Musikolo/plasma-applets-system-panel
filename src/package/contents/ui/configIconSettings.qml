@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2016 Carlos López Sánchez <musikolo{AT}hotmail[DOT]com>
+    Copyright (c) 2024 Carlos López Sánchez <musikolo{AT}hotmail[DOT]com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,24 +15,24 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.1
-import QtQuick.Controls 1.1 as QtControls
-import QtQuick.Dialogs 1.3
-import QtQuick.Layouts 1.11
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Dialogs
+import Qt.labs.platform
+import QtQuick.Layouts
 
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.kcmutils as KCM
+import org.kde.kirigami as Kirigami
 import "../code/data.js" as Data
-    
-Item {
-    readonly property int defaultIconSize: 64
+
+KCM.SimpleKCM {
+    readonly property int defaultIconSize: 48
     property var selectedIcon
     property var selectedIconData
 
     property alias cfg_layoutData : cfgStore.text
 
-    QtControls.Label {
+    Label {
         id : cfgStore
         text : cfg_layoutData
         visible:  false
@@ -44,14 +44,14 @@ Item {
         nameFilters: [i18n("Icons only (*.svg *.png *.jpg *.jpeg)"), i18n("All files (*)")]
         onAccepted: {
             if(selectedIcon){
-                console.log("Chosen file icon is", fileDialog.fileUrl.toString())
-                var icon = getIconName(fileDialog.fileUrl)
-                selectedIcon.iconSource = icon
+                console.log("Chosen file icon is", fileDialog.file.toString())
+                var icon = getIconName(fileDialog.file)
+                selectedIcon.icon.name = icon
                 selectedIcon = null
-                
+
                 Data.store.updateOperationIcon(selectedIconData.operation, icon)
                 selectedIconData = null
-                
+
                 var json = Data.store.getBasicJsonData()
                 cfgStore.text = json
             }
@@ -68,63 +68,65 @@ Item {
 
     ColumnLayout {
 
-        PlasmaExtras.Heading {
+        Kirigami.Heading {
             text: i18n("Customize & rearrange icons")
             color: syspal.text
             level: 2
         }
-        
-        QtControls.Label {
+
+        Label {
             text: i18nc("Actions for the available radio buttons","Action:")
         }
-        QtControls.ExclusiveGroup {
+        ButtonGroup {
             id: actionRadioGroup
-        }        
-        QtControls.RadioButton {
+        }
+        RadioButton {
             id: rearrangeIconsAction
             Layout.alignment : Qt.AlignLeft
             Layout.leftMargin: 10
             text: i18n("Rearrange icons")
             checked: true
-            exclusiveGroup: actionRadioGroup
+            ButtonGroup.group: actionRadioGroup
         }
-        QtControls.RadioButton {
+        RadioButton {
             id: changeSystemIconsAction
             Layout.alignment : Qt.AlignLeft
             Layout.leftMargin: 10
             text: i18n("Change icons with system icons (recommended)")
-            exclusiveGroup: actionRadioGroup
+            ButtonGroup.group: actionRadioGroup
             onClicked: uncheckToolButtons()
         }
-        QtControls.RadioButton {
+        RadioButton {
             id: changeUserIconsAction
             Layout.alignment : Qt.AlignLeft
             Layout.leftMargin: 10
             text: i18n("Change icons with user-defined icons")
-            exclusiveGroup: actionRadioGroup
+            ButtonGroup.group: actionRadioGroup
             onClicked: uncheckToolButtons()
         }
 
         Row {
             ToolButton {
-                id:arrowLeft
-                iconSource: "arrow-left"
-                width: defaultIconSize
-                height: defaultIconSize
-                tooltip: i18n("Move icon to the left")
+                id: arrowLeft
+                icon.name: "arrow-left"
+                icon.width: defaultIconSize
+                icon.height: defaultIconSize
+                ToolTip.visible: hovered
+                ToolTip.text: i18n("Move icon to the left")
                 enabled: false
                 onClicked: moveIcon("LEFT")
             }
-            
+
             Repeater {
-                id:iconList
+                id: iconList
                 model: Data.store.getConfigData()
                 delegate: ToolButton {
-                    iconSource: modelData.icon
+                    icon.name: modelData.icon
                     checkable: rearrangeIconsAction.checked
-                    width: defaultIconSize
-                    height: defaultIconSize
-                    tooltip: { 
+                    icon.width: defaultIconSize
+                    icon.height: defaultIconSize
+                    ToolTip.visible: hovered
+                    ToolTip.text: {
                          return rearrangeIconsAction.checked ? i18n("Click to select and move icon") : i18n("Click to change icon")
                     }
                     onClicked: {
@@ -137,35 +139,37 @@ Item {
                     }
                 }
             }
-            
+
             ToolButton {
-                id:arrowRight
-                iconSource: "arrow-right"
-                width: defaultIconSize
-                height: defaultIconSize
-                tooltip: i18n("Move icon to the right")
+                id: arrowRight
+                icon.name: "arrow-right"
+                icon.width: defaultIconSize
+                icon.height: defaultIconSize
+                ToolTip.visible: hovered
+                ToolTip.text: i18n("Move icon to the right")
                 enabled: false
                 onClicked: moveIcon("RIGHT")
             }
         }
-        
+
         ToolButton {
             id: restore
-            iconSource: "edit-undo"
-            width: 90
-            height: 48
+            icon.name: "edit-undo"
+            icon.width: 64
+            icon.height: 32
+            ToolTip.visible: hovered
+            ToolTip.text: i18n("Reset all current changes to previous values")
             text: i18n("Reset")
-            tooltip: i18n("Reset all current changes to previous values")
             onClicked: restoreDefaults()
         }
     }
-    
+
     function getIconName(icon){
-        
+
         if( icon && icon.toString){
             icon = icon.toString()
         }
-        
+
         if(changeUserIconsAction.checked){
             icon = icon.replace("file://", "")
         }
@@ -175,59 +179,60 @@ Item {
                 icon = icon.slice(lastSlashIdx + 1, -4)
             }
         }
-        
+
         return icon
     }
-    
+
     function uncheckToolButtons(){
-        
+
         if(selectedIcon){
             selectedIcon.checked = false
             selectIcon(selectedIcon)
         }
     }
-    
+
     function chooseIconFile(toolButton, modelData){
 
-        console.log("Clicked on", toolButton.iconSource)
+        console.log("Clicked on", toolButton.icon.source)
         selectedIcon = toolButton
         selectedIconData = modelData
-        fileDialog.folder = (changeUserIconsAction.checked ? fileDialog.shortcuts.home : "/usr/share/icons")
-        fileDialog.open();
+        fileDialog.folder = (changeUserIconsAction.checked ? StandardPaths.standardLocations(StandardPaths.HomeLocation)[0] :
+                                                             "file:///usr/share/icons")
+        fileDialog.open()
     }
-    
+
     function selectIcon(toolButton, modelData, index){
 
-        console.log("Clicked on", toolButton.iconSource, "Selected:", toolButton.checked)
+        console.log("Clicked on", toolButton.icon.source, "Selected:", toolButton.checked)
         if(selectedIcon && selectedIcon != toolButton){
             selectedIcon.checked = false
         }
-        
+
         if(toolButton.checked){
             selectedIcon = toolButton
             selectedIconData = modelData
             updateArrows()
-            
+
         }
         else {
             resetArrows()
         }
     }
-    
+
     function moveIcon(direction){
-        
+
         if(selectedIconData){
-            var currentPosition = Data.store.getOperationPosition(selectedIconData.operation);
+            var currentPosition = Data.store.getOperationPosition(selectedIconData.operation)
             if(currentPosition < iconList.count){
 
                 var newPosition = -1
                 if(direction == "LEFT" && currentPosition > 0){
-                    newPosition = currentPosition - 1;
+                    newPosition = currentPosition - 1
                 }
                 else if(direction == "RIGHT" && currentPosition < iconList.count - 1) {
-                    newPosition = currentPosition + 1;
+                    newPosition = currentPosition + 1
                 }
-                
+
                 if(newPosition > -1){
                     var success = Data.store.updateOperationPosition(selectedIconData.operation, newPosition)
                     if(success){
@@ -253,22 +258,22 @@ Item {
             }
         }
     }
-    
+
     function updateArrows(){
-        
-        var currentPosition = Data.store.getOperationPosition(selectedIconData.operation);
+
+        var currentPosition = Data.store.getOperationPosition(selectedIconData.operation)
         arrowLeft.enabled = (currentPosition > 0)
         arrowRight.enabled = (currentPosition < iconList.count - 1)
     }
-    
+
     function resetArrows(){
-        
+
         selectedIcon = null
         selectedIconData = null
         arrowLeft.enabled = false
         arrowRight.enabled = false
     }
-    
+
     function restoreDefaults(){
 
         iconList.model = null // Needed to force refresh

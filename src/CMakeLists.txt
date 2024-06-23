@@ -1,23 +1,23 @@
-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
+project(plasma-applet-system-panel)
 
-set(QT_MIN_VERSION "5.4.0")
-set(KF5_MIN_VERSION "5.0.0")
+set(QT_MIN_VERSION "6.6.0")
+set(KF6_MIN_VERSION "6.0.0")
 
-find_package(ECM 0.0.11 REQUIRED NO_MODULE)
-
+find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDECompilerSettings)
+include(KDEInstallDirs6)
+include(KDECMakeSettings NO_POLICY_SCOPE)
 
-find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Quick)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Plasma)
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Quick)
+find_package(Plasma ${KF6_MIN_VERSION} REQUIRED)
 
 add_subdirectory(plugin)
 add_subdirectory(translations)
 
 plasma_install_package(package org.kde.plasma.systempanel)
 
-install( DIRECTORY image/breeze DESTINATION ${ICON_INSTALL_DIR})
-install( DIRECTORY image/breeze-dark DESTINATION ${ICON_INSTALL_DIR})
+message(STATUS "Install directory KDE_INSTALL_ICONDIR=${KDE_INSTALL_ICONDIR}")
+install( DIRECTORY image/breeze DESTINATION ${KDE_INSTALL_ICONDIR})
+install( DIRECTORY image/breeze-dark DESTINATION ${KDE_INSTALL_ICONDIR})

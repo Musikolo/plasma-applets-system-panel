@@ -1,5 +1,5 @@
-# plasma5-applets-system-panel
-Plasma5 applet that displays a panel with a set of system actions.
+# plasma6-applets-system-panel
+Plasma6 applet that displays a panel with a set of system actions.
 
 ## Screenshots:
 ![alt tag](./docs/screenshoots/system_panel_01.png)

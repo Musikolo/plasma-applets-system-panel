@@ -1,4 +1,4 @@
+- Improve the turnOffScreen operation to rely on DBus rather than command execution.
 - Port confirmation dialog for sleep and hibernate actions.
-- Add contextual menu with unselected options.
-- Select custom action.
-- Add About tab in the Settings window.
+- Add contextual menu with not displayed actions.
+- Implement feature to allow running custom actions.

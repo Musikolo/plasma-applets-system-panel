@@ -238,5 +238,9 @@ PlasmoidItem {
     function performOperation(operation) {
         console.log("performOperation - operation=", operation);
         session[operation]();
+
+        if(operation == "lock" && Plasmoid.configuration.lockTurnOffScreen){
+            systemPanel.turnOffScreen()
+        }
     }
 }

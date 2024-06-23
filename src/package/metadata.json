@@ -7,8 +7,8 @@
             }
         ],
         "Category": "Utilities",
-        "Description": "Plasma6 applet that displays a panel with a set of system actions",
-        "Description[es]": "Plasma6 applet que muestra un panel con acciones de sistema",
+        "Description": "Applet for KDE Plasma 6 that displays a panel with a set of system actions",
+        "Description[es]": "Applet para KDE Plasma 6 que muestra un panel con acciones de sistema",
         "Description[fr]": "Applet Plasma6 qui affiche un ensemble d'actions système",
         "Description[nl]": "Plasma6-widget die een paneel bevat met systeemacties",
         "EnabledByDefault": true,

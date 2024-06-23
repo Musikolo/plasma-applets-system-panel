@@ -209,21 +209,9 @@ PlasmoidItem {
     function clickHandler(operation, button) {
         //TODO: See how to implement a confirmation dialog
         // if (operation === "suspendToDisk" && Plasmoid.configuration.hibernateConfirmation) {
-        //     // TODO: Clean up
-        //     // if (!hibernateDialog) {
-        //     //     hibernateDialog = hibernateDialogComponent.createObject(itemGrid)
-        //     // }
-        //     // hibernateDialog.visualParent = button
-        //     // hibernateDialog.open()
         //     hibernateDialogComponent.open()
 
         // } else if (operation === "suspendToRam" && Plasmoid.configuration.sleepConfirmation){
-        //     //TODO: Clean up
-        //     // if (!sleepDialog) {
-        //     //     sleepDialog = sleepDialogComponent.createObject(itemGrid)
-        //     // }
-        //     // sleepDialog.visualParent = button
-        //     // sleepDialog.open()
         //     sleepDialogComponent.open()
 
         // } else if (operation === "turnOffScreen") {

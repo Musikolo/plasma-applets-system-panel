@@ -231,15 +231,6 @@ KCM.SimpleKCM {
         Row {
             QtControls.SpinBox{
                 id: columns
-                //TODO: See if there is any case scenario we need to do any maths
-                from: 1
-                // from: {
-                //     var value = 2
-                //     if(numVisibleButtons <= 2) {
-                //         value = 1
-                //     }
-                //     return value
-                // }
                 to: Math.ceil(numVisibleButtons / rows.value)
                 value: cfg_columns
                 enabled: !inlineBestFit.checked && numVisibleButtons > 1

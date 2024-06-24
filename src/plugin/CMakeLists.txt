@@ -4,7 +4,7 @@ set(plasmoidplugin_SRCS
     )
 
 add_library(plasmoidplugin SHARED ${plasmoidplugin_SRCS})
-target_link_libraries(plasmoidplugin Qt6::Quick)
+target_link_libraries(plasmoidplugin Qt6::Quick Qt6::DBus)
 
 install(TARGETS plasmoidplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/private/systempanel)
 

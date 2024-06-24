@@ -1,50 +1,57 @@
 ---------------------
+2024-06-XX - v.2.1.0
+---------------------
+- Replace system command with DBus-based implementation for turnOffScreen operation.
+- Provide support for X11 for turnOffScreen operation.
+- Other minor code enhancements.
+
+---------------------
 2024-06-23 - v.2.0.0
 ---------------------
 - Port to KDE Plasma 6.
-- Other minor code enhancements. 
+- Other minor code enhancements.
 
 ---------------------
 2019-07-08 - v.1.6.0
 ---------------------
-- Added Dutch translation (special thanks to Heimen Stoffels)
-- Other minor enhancements
+- Added Dutch translation (special thanks to Heimen Stoffels).
+- Other minor enhancements.
 
 ---------------------
 2019-07-07 - v.1.5.0
 ---------------------
 - Upgrade some QtQuick imports
-- Update standby icons for breeze & breeze-dark themes
-- Remove compilation override warning
+- Update standby icons for breeze & breeze-dark themes.
+- Remove compilation override warning.
 
 ---------------------
 2017-10-26 - v.1.4.0
 ---------------------
-- Add breeze-dark theme icons
+- Add breeze-dark theme icons.
 
 ---------------------
 2016-04-18 - v.1.3.0
 ---------------------
-- Rearrange icons
-- Customize icons
-- Other minor improvements
+- Rearrange icons.
+- Customize icons.
+- Other minor improvements.
 
 ---------------------
 2016-03-14 - v.1.2.0
 ---------------------
-- Added localization support
-- Added French translation (special thanks to Dominique Bribanick)
-- Added Spanish translation
+- Added localization support.
+- Added French translation (special thanks to Dominique Bribanick).
+- Added Spanish translation.
 
 ---------------------
 2016-03-07 - v.1.1.0
 ---------------------
-- Added option to Turn Off the monitor when Locking the screen
-- Added option to make ask for confirmation optional for Sleep and Hibernate actions
-- Remove compilation warning
-- Other minor improvements
+- Added option to Turn Off the monitor when Locking the screen.
+- Added option to make ask for confirmation optional for Sleep and Hibernate actions.
+- Remove compilation warning.
+- Other minor improvements.
 
 ---------------------
 2016-03-01 - v.1.0.0
 ---------------------
-- First public version
+- First public version.

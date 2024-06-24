@@ -18,7 +18,6 @@
 #ifndef SYSTEM_PANEL_H
 #define SYSTEM_PANEL_H
 
-
 #include <QObject>
 
 class SystemPanel : public QObject
@@ -26,7 +25,7 @@ class SystemPanel : public QObject
     Q_OBJECT
 
 public:
-    SystemPanel( QObject *parent = 0);
+    SystemPanel(QObject *parent = 0);
     ~SystemPanel();
 
 public Q_SLOTS:

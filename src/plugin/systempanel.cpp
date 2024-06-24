@@ -16,6 +16,10 @@
 */
 
 #include "systempanel.h"
+#include <QDBusConnection>
+#include <QDBusInterface>
+#include <QDBusReply>
+#include <QDebug>
 
 SystemPanel::SystemPanel(QObject *parent) : QObject(parent) {
 }
@@ -24,12 +28,16 @@ SystemPanel::~SystemPanel() {
 }
 
 int SystemPanel::turnOffScreen(){
-    
-    //TODO: For wayland we need sleep 0.5 && qdbus org.kde.kglobalaccel /component/org_kde_powerdevil invokeShortcut "Turn Off Screen"
-    //TODO: We can also use kscreen-doctor --dpms off or implment integration with libkscreen
-    // const int result = system("/usr/bin/xset dpms force off");
-    const int result = system("/usr/bin/kscreen-doctor --dpms off");
-    // const int result = system("qdbus org.kde.kglobalaccel /component/org_kde_powerdevil invokeShortcut \"Turn Off Screen\"");
-    
-    return result;
+
+    QDBusInterface dbusPowerdevil("org.kde.kglobalaccel", "/component/org_kde_powerdevil",
+                                  "org.kde.kglobalaccel.Component", QDBusConnection::sessionBus());
+    QDBusReply<void> reply = dbusPowerdevil.call("invokeShortcut", "Turn Off Screen");
+
+    if(reply.isValid()) {
+        qDebug() << "QDBus reply was successful!";
+        return 0;
+    }
+
+    qDebug() << "QDBus ERROR:" << reply.error().message();
+    return 1;
 }

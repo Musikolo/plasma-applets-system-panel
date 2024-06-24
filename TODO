@@ -1,4 +1,3 @@
-- Improve the turnOffScreen operation to rely on DBus rather than command execution.
 - Port confirmation dialog for sleep and hibernate actions.
 - Add contextual menu with not displayed actions.
 - Implement feature to allow running custom actions.

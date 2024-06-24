@@ -1,5 +1,5 @@
 # plasma-applets-system-panel
-Applet for KDE Plasma 6 that displays a panel with a set of system actions.
+Plasmoid for KDE Plasma 6 that displays a panel with a set of system actions.
 
 ## Screenshots:
 ![alt tag](./docs/screenshoots/system_panel_01.png)
